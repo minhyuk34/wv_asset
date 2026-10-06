@@ -1,0 +1,607 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>주주클럽 · 월드비전 임직원 주식기부 캠페인</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;800;900&display=swap">
+<style>
+:root{
+  --or:#FF5A19; --or-d:#E04A0C; --or-t:#FFF1E8;
+  --peach1:#FFE9DA; --peach2:#FFD8BF;
+  --ink:#111; --ink2:#2B2B2B; --mute:#6B6B6B; --line:#EADFD5;
+  --r:18px; --shadow:0 6px 24px rgba(120,60,20,.10);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{word-break:keep-all;font-family:"Noto Sans KR","맑은 고딕",sans-serif;color:var(--ink2);background:#fff;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
+input,select{font:inherit;color:inherit}
+a{color:inherit}
+svg.i{width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+
+/* ───── header ───── */
+.gnb{position:sticky;top:0;z-index:50;background:#fff;border-bottom:2px solid var(--or)}
+.gnb .wrap{display:flex;align-items:center;justify-content:space-between;height:68px;gap:20px;max-width:1200px}
+.logo{display:block;position:relative;width:196px;aspect-ratio:1400/237;flex:none}
+.logo img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}
+.logo .a{animation:swapA 6s ease-in-out infinite}
+.logo .b{animation:swapB 6s ease-in-out infinite}
+@keyframes swapA{0%,40%{opacity:1}50%,90%{opacity:0}100%{opacity:1}}
+@keyframes swapB{0%,40%{opacity:0}50%,90%{opacity:1}100%{opacity:0}}
+@media(prefers-reduced-motion:reduce){.logo .a,.logo .b{animation:none}.logo .b{opacity:0}}
+.nav-m{display:flex;gap:30px;font-size:15px;font-weight:500}
+.nav-m a{text-decoration:none;color:var(--ink2);padding:6px 0;border-bottom:2px solid transparent}
+.nav-m a:hover{color:var(--or);border-color:var(--or)}
+.g-r{display:flex;align-items:center;gap:12px}
+.pill-or{display:inline-flex;align-items:center;justify-content:center;background:var(--or);color:#fff;font-weight:700;border-radius:999px;text-decoration:none;transition:.15s}
+.pill-or:hover{background:var(--or-d)}
+.g-cta{padding:9px 20px;font-size:14px}
+.burger{display:none;width:40px;height:40px;border-radius:10px;place-items:center;font-size:24px}
+.drawer{display:none;position:absolute;left:0;right:0;top:100%;background:#fff;border-bottom:2px solid var(--or);padding:8px 24px 20px;box-shadow:0 14px 24px rgba(0,0,0,.08)}
+.drawer a{display:block;padding:14px 0;text-decoration:none;font-weight:500;font-size:17px;border-bottom:1px solid var(--line)}
+.drawer.open{display:block}
+
+/* ───── hero ───── */
+.hero{position:relative;color:#fff;min-height:560px;display:flex;align-items:center;background:#8d4a29}
+.hero .bg{position:absolute;inset:0;background:url(assets/main.jpg) 62% 40%/cover no-repeat}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(30,12,4,.72) 0%,rgba(30,12,4,.42) 48%,rgba(30,12,4,.08) 100%)}
+.hero .wrap{position:relative;z-index:2;width:100%;padding-top:72px;padding-bottom:72px}
+.hero .kick{display:inline-block;font-size:14px;font-weight:700;letter-spacing:.14em;background:var(--or);padding:4px 14px;border-radius:999px;margin-bottom:22px}
+.hero h1{font-size:clamp(34px,5.6vw,64px);font-weight:800;letter-spacing:-.035em;line-height:1.2;text-shadow:0 2px 20px rgba(0,0,0,.25)}
+.hero h1 em{font-style:normal;color:#FFB48A}
+.hero p.sub{font-size:clamp(16px,2.1vw,21px);margin-top:18px;font-weight:300;max-width:520px;color:#FFF3EA}
+.ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+.btn-lg{padding:16px 32px;font-size:17px}
+.btn-line{display:inline-flex;align-items:center;justify-content:center;border:2px solid #fff;color:#fff;font-weight:700;border-radius:999px;text-decoration:none;padding:14px 30px;font-size:17px;transition:.15s}
+.btn-line:hover{background:#fff;color:var(--or-d)}
+
+/* ───── sections ───── */
+.sec{padding:84px 0}
+.sec.peach{background:linear-gradient(180deg,var(--peach1),var(--peach2))}
+.sec.soft{background:#FBF6F1}
+.head{text-align:center;margin-bottom:44px}
+.head .eb{font-size:13px;font-weight:700;letter-spacing:.2em;color:var(--ink)}
+.head h2{font-size:clamp(27px,4.4vw,40px);font-weight:800;letter-spacing:-.03em;color:var(--ink);line-height:1.3;margin-top:8px}
+.head h2 em{font-style:normal;color:var(--or)}
+.head p{color:var(--mute);margin-top:12px;font-size:16px}
+.sample{display:inline-block;font-size:12px;font-weight:700;color:#fff;background:var(--or);padding:2px 10px;border-radius:99px;margin-left:8px;vertical-align:middle;letter-spacing:0}
+
+.ico{width:60px;height:60px;border-radius:50%;background:var(--or);color:#fff;display:grid;place-items:center;font-size:28px;flex:none}
+.ico.sm{width:48px;height:48px;font-size:23px}
+
+.feat{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.feat .it{display:flex;gap:16px;align-items:flex-start}
+.feat h3{font-size:19px;font-weight:800;color:var(--ink);margin-bottom:4px}
+.feat p{font-size:15px;color:var(--mute)}
+
+.fund3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.fcard{background:#fff;border-radius:var(--r);box-shadow:var(--shadow);padding:34px 26px 28px;text-align:center;display:flex;flex-direction:column;align-items:center}
+.fcard .ico{margin-bottom:16px}
+.fcard .en{font-size:11px;letter-spacing:.16em;font-weight:700;color:var(--or)}
+.fcard h3{font-size:21px;font-weight:800;color:var(--ink);margin:4px 0 8px}
+.fcard p{font-size:15px;color:var(--mute);flex:1}
+.fcard button{margin-top:20px;font-weight:700;color:var(--or-d);border:2px solid var(--or);padding:9px 22px;border-radius:99px;font-size:14px;transition:.15s}
+.fcard button:hover{background:var(--or);color:#fff}
+
+/* graph */
+.board{background:#fff;border-radius:var(--r);box-shadow:var(--shadow);padding:34px;display:grid;grid-template-columns:1.1fr 1fr;gap:34px;border:1px solid var(--line)}
+.big{font-size:clamp(40px,7vw,60px);font-weight:900;letter-spacing:-.04em;line-height:1.05;color:var(--ink)}
+.big small{font-size:.34em;font-weight:700;margin-left:4px}
+.meter{height:20px;border-radius:99px;background:#F1E8E0;overflow:hidden;display:flex;margin:18px 0 10px}
+.meter span{display:block;height:100%;transition:width .9s cubic-bezier(.2,.8,.2,1)}
+.m-done{background:var(--or)} .m-pledge{background:#FFB48A}
+.legend{display:flex;gap:16px;font-size:13px;color:var(--mute);flex-wrap:wrap}
+.legend b{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:6px}
+.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:24px}
+.kpi{background:var(--or-t);border-radius:14px;padding:14px 16px}
+.kpi p{font-size:12px;color:var(--mute)} .kpi strong{font-size:23px;font-weight:800;color:var(--ink)}
+.bars h4,.trend h4{font-size:15px;font-weight:800;color:var(--ink);margin-bottom:14px}
+.bar{margin-bottom:18px}
+.bar .lab{display:flex;justify-content:space-between;font-size:14px;font-weight:700;margin-bottom:6px}
+.bar .lab span{color:var(--mute);font-weight:400}
+.bar .meter{height:12px;margin:0}
+.trend{grid-column:1/-1;border-top:1px solid var(--line);padding-top:20px}
+.note{font-size:12px;color:var(--mute);margin-top:6px}
+.sup{display:flex;flex-wrap:wrap;gap:8px}
+.sup span{background:var(--or-t);color:var(--or-d);font-weight:600;font-size:13px;padding:5px 13px;border-radius:99px}
+
+/* process */
+.proc{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;position:relative}
+.proc .st{text-align:center;position:relative;padding:0 8px}
+.proc .st::after{content:"";position:absolute;top:33px;left:calc(50% + 42px);right:calc(-50% + 42px);border-top:2px dashed #F2A777}
+.proc .st:last-child::after{display:none}
+.ring{width:68px;height:68px;margin:0 auto 14px;border-radius:50%;background:#fff;border:3px solid var(--or);display:grid;place-items:center;font-weight:900;font-size:21px;color:var(--or-d)}
+.proc h3{font-size:18px;font-weight:800;color:var(--ink)}
+.proc p{font-size:14px;color:var(--mute);margin-top:4px}
+
+/* join wizard */
+.steps{display:flex;gap:8px;margin:0 auto 34px;justify-content:center;flex-wrap:wrap}
+.pill{display:flex;align-items:center;gap:8px;padding:8px 18px 8px 8px;border-radius:99px;background:#fff;border:1px solid var(--line);font-size:14px;font-weight:600;color:#9A8F86}
+.pill i{font-style:normal;width:26px;height:26px;border-radius:50%;background:#F1E8E0;display:grid;place-items:center;font-size:12px;font-weight:800}
+.pill.on{background:var(--or);border-color:var(--or);color:#fff} .pill.on i{background:#fff;color:var(--or)}
+.pill.done{color:var(--or-d);border-color:#F7C9A8} .pill.done i{background:var(--or);color:#fff}
+.panel{display:none} .panel.on{display:block;animation:in .35s ease}
+@keyframes in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.panel h3{font-size:clamp(22px,3.4vw,30px);font-weight:800;letter-spacing:-.03em;color:var(--ink);text-align:center}
+.panel .hint{color:var(--mute);margin:6px 0 26px;text-align:center}
+
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.biz{position:relative;text-align:left;background:#fff;border:2px solid transparent;border-radius:var(--r);overflow:hidden;transition:.18s;display:flex;flex-direction:column;box-shadow:var(--shadow)}
+.biz:hover{transform:translateY(-3px)}
+.biz.sel{border-color:var(--or)}
+.biz img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block}
+.biz .bd{padding:18px 22px 24px}
+.biz .en{font-size:11px;letter-spacing:.14em;font-weight:700;color:var(--or)}
+.biz h4{font-size:20px;font-weight:800;margin:4px 0 8px;color:var(--ink)}
+.biz p{font-size:14.5px;color:var(--mute)}
+.biz .chk{position:absolute;top:12px;right:12px;width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,.92);color:rgba(255,255,255,.92);display:grid;place-items:center;font-weight:800;border:2px solid #D8CCC1}
+.biz.sel .chk{background:var(--or);border-color:var(--or);color:#fff}
+
+.two{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.type{text-align:left;background:#fff;border:2px solid transparent;border-radius:var(--r);padding:30px;transition:.18s;box-shadow:var(--shadow)}
+.type:hover{transform:translateY(-3px)}
+.type.sel{border-color:var(--or);background:var(--or-t)}
+.type .tag{display:inline-block;font-size:13px;font-weight:700;background:var(--ink);color:#fff;padding:2px 14px;border-radius:99px}
+.type.sel .tag{background:var(--or)}
+.type h4{font-size:30px;font-weight:900;margin:12px 0 4px;color:var(--ink)}
+.type .one{font-weight:500;color:var(--ink2);margin-bottom:14px}
+.type ul{list-style:none;font-size:15px;color:var(--mute)}
+.type li{padding:8px 0 8px 22px;position:relative;border-top:1px solid var(--line)}
+.type li::before{content:"";position:absolute;left:2px;top:17px;width:8px;height:8px;border-radius:50%;background:var(--or)}
+.warn{margin-top:16px;font-size:13px;color:var(--mute);text-align:center}
+
+.nav{display:flex;justify-content:space-between;margin-top:32px;gap:12px}
+.btn{padding:15px 30px;border-radius:99px;font-weight:700;font-size:16px;transition:.15s}
+.btn.ghost{background:#fff;color:var(--ink2);border:1px solid #D8CCC1}
+.btn.pri{background:var(--or);color:#fff}
+.btn.pri:hover{background:var(--or-d)}
+.btn:disabled{opacity:.35;cursor:not-allowed}
+.picked{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px;justify-content:center}
+.chip{background:var(--ink);color:#fff;font-weight:700;font-size:13px;padding:5px 14px;border-radius:99px}
+.chip + .chip{background:var(--or)}
+
+.brokers{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px;justify-content:center}
+.bk{padding:10px 18px;border-radius:99px;background:#fff;font-weight:600;font-size:15px;border:2px solid var(--line)}
+.bk.on{border-color:var(--or);background:var(--or-t);color:var(--or-d)}
+.guide{background:#fff;border-radius:var(--r);box-shadow:var(--shadow);padding:32px;display:grid;grid-template-columns:1.2fr 1fr;gap:32px}
+.guide ol{list-style:none;counter-reset:s}
+.guide li{counter-increment:s;display:flex;gap:14px;align-items:flex-start;padding:11px 0;font-size:16px;font-weight:600;border-bottom:1px solid #F3ECE5}
+.guide li::before{content:counter(s);flex:none;width:28px;height:28px;border-radius:50%;background:var(--ink);color:#fff;display:grid;place-items:center;font-size:13px;font-weight:800}
+.guide li:last-child::before{background:var(--or)}
+.guide .app{font-size:14px;color:var(--mute);margin-bottom:6px}
+.acct{background:var(--or-t);border-radius:16px;padding:24px;align-self:start}
+.acct dt{font-size:12px;color:var(--mute);margin-top:14px} .acct dt:first-child{margin-top:0}
+.acct dd{font-weight:700;font-size:16px;color:var(--ink)}
+.acct .no{font-size:26px;font-weight:900;color:var(--or-d);display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.copy{font-size:12px;font-weight:700;background:var(--or);color:#fff;border-radius:99px;padding:5px 14px}
+.proof{margin-top:18px;background:#fff;border-radius:12px;padding:12px 14px;font-size:14px;font-weight:600;color:var(--ink)}
+
+.form{display:grid;grid-template-columns:repeat(2,1fr);gap:18px 20px;background:#fff;border-radius:var(--r);box-shadow:var(--shadow);padding:32px}
+.f{display:flex;flex-direction:column;gap:6px;min-width:0}
+.f.full{grid-column:1/-1}
+.f label{font-size:13px;font-weight:700;color:var(--ink)}
+.f label i{color:var(--or);font-style:normal}
+.f input,.f select{background:#fff;border:1.5px solid #E0D5CB;border-radius:12px;padding:13px 14px;outline:none;width:100%}
+.f input:focus,.f select:focus{border-color:var(--or);box-shadow:0 0 0 4px rgba(255,90,25,.12)}
+.f input[readonly]{background:#F6F0EA;color:var(--mute)}
+.sig{background:#fff;border:1.5px dashed #CDBFB2;border-radius:14px;position:relative;touch-action:none}
+.sig canvas{display:block;width:100%;height:150px}
+.sig .ph{position:absolute;inset:0;display:grid;place-items:center;color:#B7ABA0;font-size:14px;pointer-events:none;text-align:center;padding:0 12px}
+.sig button{position:absolute;right:10px;top:10px;font-size:12px;background:#F6F0EA;padding:5px 12px;border-radius:99px;font-weight:600}
+.agree{display:flex;gap:10px;align-items:flex-start;font-size:14px;color:var(--ink2);background:var(--or-t);border-radius:12px;padding:12px 14px}
+.agree input{accent-color:var(--or);width:18px;height:18px;margin-top:2px;flex:none}
+.err{color:#C62828;font-size:13px;margin-top:10px;min-height:18px;text-align:center}
+
+.doc{background:#fff;border-radius:var(--r);box-shadow:var(--shadow);padding:44px;max-width:760px;margin:0 auto}
+.doc h4{text-align:center;font-size:28px;font-weight:900;letter-spacing:.08em;margin-bottom:6px;color:var(--ink)}
+.doc .sub2{text-align:center;color:var(--mute);font-size:13px;margin-bottom:26px}
+.doc table{width:100%;border-collapse:collapse;font-size:15px;margin-bottom:22px}
+.doc th,.doc td{border:1px solid var(--line);padding:10px 14px;text-align:left}
+.doc th{background:var(--or-t);width:26%;font-weight:700;font-size:14px}
+.doc p.t{font-size:14px;color:var(--ink2);margin-bottom:8px}
+.doc .sg{display:flex;justify-content:flex-end;align-items:center;gap:14px;margin-top:22px;flex-wrap:wrap}
+.doc .sg img{height:60px;border-bottom:1px solid var(--line)}
+.done-head{text-align:center;margin-bottom:28px}
+.done-head .ok{width:64px;height:64px;border-radius:50%;background:var(--or);color:#fff;font-size:32px;display:grid;place-items:center;margin:0 auto 16px}
+.next{background:#fff;border-radius:var(--r);padding:22px 26px;max-width:760px;margin:20px auto 0;border:1px solid var(--line)}
+.next h5{font-size:15px;margin-bottom:8px;color:var(--ink)}
+.next ol{padding-left:20px;font-size:14.5px;color:var(--ink2)}
+.next li{padding:3px 0}
+
+.handoff{display:grid;grid-template-columns:1fr 1.3fr;gap:20px;max-width:900px;margin:0 auto}
+.mine{background:#fff;border-radius:var(--r);box-shadow:var(--shadow);padding:28px;text-align:center}
+.mine .lb{font-size:13px;font-weight:700;color:var(--mute);margin-bottom:12px}
+.mine .picked{margin-bottom:14px}
+.mine .mhint{font-size:13px;color:var(--mute)}
+.copy2{margin-top:14px;font-weight:700;color:var(--or-d);border:2px solid var(--or);padding:9px 22px;border-radius:99px;font-size:14px;transition:.15s}
+.copy2:hover{background:var(--or);color:#fff}
+.todo{list-style:none;counter-reset:t;background:#fff;border-radius:var(--r);box-shadow:var(--shadow);padding:10px 26px}
+.todo li{counter-increment:t;position:relative;padding:16px 0 16px 44px;border-bottom:1px solid #F3ECE5}
+.todo li:last-child{border:0}
+.todo li::before{content:counter(t);position:absolute;left:0;top:16px;width:30px;height:30px;border-radius:50%;background:var(--or);color:#fff;display:grid;place-items:center;font-weight:800;font-size:14px}
+.todo b{display:block;color:var(--ink);font-size:17px}
+.todo span{font-size:14px;color:var(--mute)}
+.go-home{text-align:center;margin-top:30px}
+.go-home p{font-size:13px;color:var(--mute);margin-top:12px}
+
+/* trust */
+.trust{display:grid;grid-template-columns:repeat(4,1fr);gap:26px}
+.trust .it{text-align:left}
+.trust .ico{margin-bottom:14px}
+.trust h3{font-size:18px;font-weight:800;color:var(--ink);margin-bottom:4px}
+.trust p{font-size:14.5px;color:var(--mute)}
+
+/* impact */
+.impact{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center}
+.impact img{width:100%;border-radius:var(--r);display:block;box-shadow:var(--shadow);aspect-ratio:3/2;object-fit:cover}
+.impact .eb{font-size:13px;font-weight:700;letter-spacing:.2em;color:var(--ink)}
+.impact h2{font-size:clamp(26px,4vw,36px);font-weight:800;color:var(--ink);letter-spacing:-.03em;margin:8px 0 22px;line-height:1.3}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.stats b{display:block;font-size:clamp(30px,5vw,44px);font-weight:900;color:var(--or);line-height:1.1;letter-spacing:-.03em}
+.stats span{font-size:14px;color:var(--ink2)}
+
+/* final cta */
+.final{text-align:center}
+.final h2{font-size:clamp(26px,4.2vw,38px);font-weight:800;color:var(--ink);letter-spacing:-.03em}
+.final p.s{color:var(--mute);margin:10px 0 26px}
+.ppl{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;max-width:520px;margin:34px auto 0}
+.pp{background:#fff;border-radius:16px;padding:18px 20px;box-shadow:var(--shadow);text-align:left}
+.pp small{color:var(--mute);font-size:12px}.pp b{display:block;font-size:20px;color:var(--ink)}
+.final .tel{margin-top:20px;font-weight:500}
+
+.foot{background:#fff;border-top:1px solid var(--line);padding:30px 0 40px;font-size:13px;color:var(--mute)}
+.foot .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px}
+.foot img{height:34px;display:block}
+
+/* ───── responsive ───── */
+@media(max-width:1000px){
+  .nav-m{display:none}
+  .burger{display:grid}
+  .proc{grid-template-columns:repeat(2,1fr);gap:30px 10px}
+  .proc .st::after{display:none}
+  .trust{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:820px){
+  .feat,.fund3,.cards,.two,.impact{grid-template-columns:1fr}
+  .board,.guide,.handoff{grid-template-columns:1fr}
+  .impact{gap:24px}
+}
+@media(max-width:640px){
+  .wrap{padding:0 18px}
+  .gnb .wrap{height:60px}
+  .logo{width:160px}
+  .g-cta{padding:8px 16px;font-size:13px}
+  .hero{min-height:640px;align-items:flex-start;background:#5a2e18}
+  .hero .bg{background-size:175% auto;background-position:80% 100%;-webkit-mask-image:linear-gradient(180deg,transparent 28%,#000 46%);mask-image:linear-gradient(180deg,transparent 28%,#000 46%)}
+  .hero::after{background:linear-gradient(180deg,rgba(40,16,6,.55) 0%,rgba(40,16,6,.3) 45%,rgba(40,16,6,0) 72%)}
+  .hero .wrap{padding-top:44px;padding-bottom:0;text-align:center}
+  .hero p.sub{margin-left:auto;margin-right:auto}
+  .ctas{justify-content:center}
+  .btn-lg,.btn-line{padding:13px 24px;font-size:15px}
+  .sec{padding:60px 0}
+  .head{margin-bottom:32px}
+  .board,.guide,.form{padding:22px}
+  .kpis{gap:8px}.kpi{padding:12px}.kpi strong{font-size:19px}
+  .proc{grid-template-columns:1fr 1fr}
+  .trust{grid-template-columns:1fr 1fr;gap:20px}
+  .doc{padding:22px}
+  .form{grid-template-columns:1fr}
+  .ppl{grid-template-columns:1fr}
+  .pill{font-size:12px;padding:6px 12px 6px 6px}
+  .nav{flex-direction:column-reverse}
+  .nav .btn{width:100%}
+  .nav span{display:none}
+  .stats{gap:8px}
+  .foot .wrap{flex-direction:column;align-items:flex-start}
+}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-book" viewBox="0 0 24 24"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5z"/><path d="M4 20.5A2.5 2.5 0 0 0 6.5 23H20v-5"/></symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3.5 3.5 3.5 14.5 0 18M12 3c-3.5 3.5-3.5 14.5 0 18"/></symbol>
+    <symbol id="i-drop" viewBox="0 0 24 24"><path d="M12 3c4 5 6.5 8 6.5 11.2a6.5 6.5 0 0 1-13 0C5.5 11 8 8 12 3z"/></symbol>
+    <symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 4v16h16"/><path d="M8 15l4-5 3 3 5-7"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20.5s-8-4.8-8-10.5A4.5 4.5 0 0 1 12 7.5 4.5 4.5 0 0 1 20 10c0 5.7-8 10.5-8 10.5z"/></symbol>
+    <symbol id="i-doc" viewBox="0 0 24 24"><path d="M6 3h8.5L19 7.5V21H6z"/><path d="M14 3v5h5M9 13h7M9 17h7"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></symbol>
+    <symbol id="i-report" viewBox="0 0 24 24"><path d="M5 20v-9M12 20V4M19 20v-6"/></symbol>
+    <symbol id="i-people" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><path d="M3 20c0-3.3 2.7-5.5 6-5.5s6 2.2 6 5.5"/><circle cx="17.5" cy="9" r="2.5"/><path d="M16.5 14.8c2.8 0 4.8 1.5 4.8 4.2"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+  </defs>
+</svg>
+
+<!-- header -->
+<header class="gnb">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="World Vision · 후원을 멈추는 후원">
+      <img class="b" src="assets/logo_wv.png" alt="World Vision">
+      <img class="a" src="assets/logo_slogan.png" alt="후원을 멈추는 후원">
+    </a>
+    <nav class="nav-m" aria-label="주요 메뉴">
+      <a href="#why">캠페인 소개</a><a href="#funds">3가지 기금</a><a href="#graph">기부 현황</a><a href="#process">참여 방법</a><a href="#contact">문의</a>
+    </nav>
+    <div class="g-r">
+      <a class="pill-or g-cta" href="#join">꿈주주 되기</a>
+      <button class="burger" id="burger" aria-label="메뉴 열기" aria-expanded="false">☰</button>
+    </div>
+  </div>
+  <div class="drawer" id="drawer">
+    <a href="#why">캠페인 소개</a><a href="#funds">3가지 기금</a><a href="#graph">기부 현황</a><a href="#process">참여 방법</a><a href="#contact">문의</a>
+  </div>
+</header>
+
+<!-- hero -->
+<section class="hero" id="top">
+  <div class="bg" role="img" aria-label="창문 밖으로 손을 흔드는 아이들"></div>
+  <div class="wrap">
+    <span class="kick">임직원 주식기부 캠페인</span>
+    <h1>아이들의 꿈에도<br><em>주주</em>가 필요합니다</h1>
+    <p class="sub">주식 1주로 시작하는 기부, 월드비전 주주클럽입니다.</p>
+    <div class="ctas">
+      <a class="pill-or btn-lg" href="#join">꿈주주 되기</a>
+      <a class="btn-line" href="#graph">기부 현황 보기</a>
+    </div>
+  </div>
+</section>
+
+<!-- why -->
+<section class="sec" id="why">
+  <div class="wrap">
+    <div class="head"><p class="eb">WHY JUJU CLUB</p><h2>묵혀둔 주식이 <em>아이의 꿈</em>이 됩니다</h2><p>기업의 가능성을 믿으면 주주가 됩니다. 아이의 가능성을 믿어도 주주가 될 수 있습니다.</p></div>
+    <div class="feat">
+      <div class="it"><span class="ico"><svg class="i"><use href="#i-clock"/></svg></span><div><h3>묵혀둔 자산</h3><p>오래 들고만 있던 주식, 잊고 있던 소량 보유분이 다른 쓰임을 얻습니다.</p></div></div>
+      <div class="it"><span class="ico"><svg class="i"><use href="#i-chart"/></svg></span><div><h3>금액이 아닌 ‘몇 주’</h3><p>얼마를 낼지 고민하지 않아도 됩니다. 1주 단위로 참여할 수 있습니다.</p></div></div>
+      <div class="it"><span class="ico"><svg class="i"><use href="#i-heart"/></svg></span><div><h3>가치의 이전</h3><p>내가 믿고 투자한 회사의 가치를 아이의 미래로 옮깁니다.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- funds -->
+<section class="sec peach" id="funds">
+  <div class="wrap">
+    <div class="head"><p class="eb">THREE FUNDS</p><h2>세 가지 <em>기금</em> 중 하나를 고릅니다</h2><p>고민 없이 고를 수 있도록 기금은 세 개로 고정했습니다.</p></div>
+    <div class="fund3">
+      <div class="fcard"><span class="ico"><svg class="i"><use href="#i-book"/></svg></span><p class="en">DOMESTIC DREAM</p><h3>국내 꿈지원 기금</h3><p>가정 형편 때문에 배움과 경험의 기회를 놓치는 국내 아동을 지원합니다.</p><button data-pick="domestic">이 기금으로 참여</button></div>
+      <div class="fcard"><span class="ico"><svg class="i"><use href="#i-globe"/></svg></span><p class="en">GLOBAL DREAM</p><h3>해외 꿈지원 기금</h3><p>학교도 진로도 선택할 수 없는 환경의 해외 아동의 꿈을 지원합니다.</p><button data-pick="global">이 기금으로 참여</button></div>
+      <div class="fcard"><span class="ico"><svg class="i"><use href="#i-drop"/></svg></span><p class="en">CLEAN WATER</p><h3>해외 식수사업 기금</h3><p>깨끗한 물에 접근할 수 없는 지역의 우물·급수시설과 위생 교육을 지원합니다.</p><button data-pick="water">이 기금으로 참여</button></div>
+    </div>
+  </div>
+</section>
+
+<!-- graph -->
+<section class="sec" id="graph">
+  <div class="wrap">
+    <div class="head"><p class="eb">LIVE PROGRESS</p><h2>지금 여기까지 <em>왔습니다</em> <span class="sample" id="sampleBadge">샘플 데이터</span></h2><p>약정은 신청서가 접수된 금액, 입고완료는 증권사 입고가 확인된 금액입니다.</p></div>
+    <div class="board" id="board"></div>
+  </div>
+</section>
+
+<!-- process -->
+<section class="sec peach" id="process">
+  <div class="wrap">
+    <div class="head"><p class="eb">PROCESS</p><h2>쉽고 안전한 <em>4단계</em></h2><p>기금을 고른 뒤에는 월드비전 홈페이지에서 이어서 진행합니다.</p></div>
+    <div class="proc">
+      <div class="st"><div class="ring">01</div><h3>기금·유형 선택</h3><p>이 페이지에서 고르기</p></div>
+      <div class="st"><div class="ring">02</div><h3>증권사 이체</h3><p>홈페이지 안내대로 대체출고</p></div>
+      <div class="st"><div class="ring">03</div><h3>약정서 작성</h3><p>홈페이지에서 작성·제출</p></div>
+      <div class="st"><div class="ring">04</div><h3>입고 확인·영수증</h3><p>기부금영수증 발급과 결과 보고</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- join -->
+<section class="sec soft" id="join">
+  <div class="wrap">
+    <div class="head"><p class="eb">JOIN NOW</p><h2>꿈주주 되기, <em>지금 시작하세요</em></h2></div>
+    <div class="steps" id="steps"></div>
+
+    <div class="panel on" data-p="1">
+      <h3>어디에 마음을 보태시겠어요?</h3>
+      <p class="hint">세 개 기금 중 하나를 골라주세요.</p>
+      <div class="cards" id="bizCards"></div>
+      <div class="nav"><span></span><button class="btn pri" id="n1" disabled>다음 · 기금 유형 선택</button></div>
+    </div>
+
+    <div class="panel" data-p="2">
+      <h3>기부한 주식을 어떻게 쓸까요?</h3>
+      <p class="hint">선택한 기금에서 쓰이는 방식을 정합니다.</p>
+      <div class="picked" id="pk2"></div>
+      <div class="two" id="typeCards"></div>
+      <p class="warn">※ 기금형은 법무·삼성증권 협의 후 확정되는 구조로, 현재 화면은 안내용 목업입니다.</p>
+      <div class="nav"><button class="btn ghost" data-go="1">이전</button><button class="btn pri" id="n2" disabled>다음 · 홈페이지에서 이어가기</button></div>
+    </div>
+
+    <div class="panel" data-p="3">
+      <h3>이제 월드비전 홈페이지에서 이어가세요</h3>
+      <p class="hint">증권사별 이체 방법 확인과 주식기부 약정서 작성은 홈페이지에서 진행합니다.</p>
+      <div class="handoff">
+        <div class="mine">
+          <p class="lb">내가 고른 기금</p>
+          <div class="picked" id="pk3"></div>
+          <p class="mhint">약정서 작성 때 이 내용을 함께 적어주세요.</p>
+          <button class="copy2" id="copyMine" type="button">선택 내용 복사</button>
+        </div>
+        <ol class="todo">
+          <li><b>증권사별 이체 방법 확인</b><span>이용 중인 증권사 앱 메뉴 경로와 입고계좌를 안내합니다.</span></li>
+          <li><b>증권사 앱에서 주식 이체</b><span>이체 완료 화면을 캡처해 두세요.</span></li>
+          <li><b>주식기부 약정서 작성·제출</b><span>선택한 기금과 유형을 함께 적어주세요.</span></li>
+        </ol>
+      </div>
+      <div class="go-home"><a class="pill-or btn-lg" id="homeLink" href="#" target="_blank" rel="noopener noreferrer">월드비전 홈페이지에서 이어가기 ↗</a>
+        <p>새 창으로 열립니다. 문의: 자산기금팀 02-2078-7221</p></div>
+      <div class="nav"><button class="btn ghost" data-go="2">이전</button><span></span></div>
+    </div>
+  </div>
+</section>
+
+<!-- trust -->
+<section class="sec">
+  <div class="wrap">
+    <div class="head"><p class="eb">TRUST</p><h2>투명하고 <em>안전한</em> 관리</h2></div>
+    <div class="trust">
+      <div class="it"><span class="ico sm"><svg class="i"><use href="#i-shield"/></svg></span><h3>입고 후 집행</h3><p>자산기금팀이 입고를 확인한 뒤 지정한 기금에 편입합니다.</p></div>
+      <div class="it"><span class="ico sm"><svg class="i"><use href="#i-doc"/></svg></span><h3>기부금영수증</h3><p>입고일 종가를 기준으로 산정해 영수증을 발급합니다.</p></div>
+      <div class="it"><span class="ico sm"><svg class="i"><use href="#i-report"/></svg></span><h3>사용결과 보고</h3><p>기금 조성 과정과 사용처를 마일스톤마다 공유합니다.</p></div>
+      <div class="it"><span class="ico sm"><svg class="i"><use href="#i-people"/></svg></span><h3>전담 담당자</h3><p>자산기금팀이 이체부터 입고 확인까지 직접 안내합니다.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- impact -->
+<section class="sec peach">
+  <div class="wrap impact">
+    <img src="assets/domestic.jpg" alt="교실에서 웃고 있는 아이들">
+    <div>
+      <p class="eb">IMPACT</p>
+      <h2>주식 한 주가 만드는 변화</h2>
+      <div class="stats">
+        <div><b>1주</b><span>부터 참여</span></div>
+        <div><b>3개</b><span>기금 중 선택</span></div>
+        <div><b>2가지</b><span>소진형 · 기금형</span></div>
+      </div>
+      <p style="margin-top:22px;color:var(--ink2)">소진형은 매각해 정해진 기간의 사업비로, 기금형은 원금을 지키며 운용수익으로 오래 이어집니다.</p>
+    </div>
+  </div>
+</section>
+
+<!-- contact -->
+<section class="sec final" id="contact">
+  <div class="wrap">
+    <h2>궁금한 점은 자산기금팀에 물어보세요</h2>
+    <p class="s">신청 전 상담도 환영합니다.</p>
+    <a class="pill-or btn-lg" href="#join">꿈주주 되기</a>
+    <div class="ppl">
+      <div class="pp"><small>월드비전 자산기금팀</small><b>이민우 팀장</b></div>
+      <div class="pp"><small>월드비전 자산기금팀</small><b>장민혁 차장</b></div>
+    </div>
+    <p class="tel">02-2078-7221 · goods@worldvision.or.kr</p>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="wrap">
+    <img src="assets/logo_full.png" alt="World Vision · 후원을 멈추는 후원">
+    <span>사회복지법인 월드비전 · 자산기금팀 · 임직원 주식기부 캠페인 2026</span>
+  </div>
+</footer>
+
+<script>
+/* ── 백엔드 연결: Apps Script 웹 앱 URL(…/exec)을 넣으면 실제 시트와 연동됩니다. 비워두면 샘플로 동작 ── */
+const API_URL = 'https://script.google.com/macros/s/AKfycbzD1NfwJXeNp8Bla0_sAH1QMCHxM9ZY6CYGcAg2pNbrMCqF28_2jSN7aT0GNG6ntvkOtQ/exec';
+
+/* ── 샘플 데이터 (API 응답과 같은 모양) ── */
+const MOCK = {
+  goal: 100000000,
+  pledged: 38400000, received: 21700000,
+  participants: 47, shares: 312,
+  byBiz: {domestic:{p:15200000,r:9400000}, global:{p:12100000,r:7000000}, water:{p:11100000,r:5300000}},
+  weekly: [2,5,9,14,19,24,29,33,36,38.4].map(v=>v*1e6)
+};
+const BIZ = [
+  {id:'domestic',en:'DOMESTIC DREAM',name:'국내 꿈지원 기금',img:'assets/domestic.jpg',desc:'가정 형편 때문에 배움과 경험의 기회를 놓치는 국내 아동을 지원합니다.'},
+  {id:'global',en:'GLOBAL DREAM',name:'해외 꿈지원 기금',img:'assets/global.jpg',desc:'학교도 진로도 선택할 수 없는 환경의 해외 아동의 꿈을 지원합니다.'},
+  {id:'water',en:'CLEAN WATER',name:'해외 식수사업 기금',img:'assets/water.jpg',desc:'깨끗한 물에 접근할 수 없는 지역에 우물·급수시설과 위생 교육을 지원합니다.'}
+];
+const TYPES = [
+  {id:'spend',tag:'소진형',name:'소진형',one:'기부한 주식을 매각해 정해진 기간 동안 사업비로 씁니다',
+    pts:['기부받은 주식을 즉시 매각','정해진 기간 동안 사업비로 집행','지정한 기금에 바로 편입','절차가 단순하고 빠릅니다']},
+  {id:'fund',tag:'기금형',name:'기금형',one:'원금은 지키고 운용수익으로 오래 지원합니다',
+    pts:['원금을 유지하고 운용수익만 사용','삼성증권이 자산운용 담당','직원캠페인 시드머니로 출발','한 번 조성하면 매년 재원이 나옵니다']}
+];
+const $=s=>document.querySelector(s);
+const won=n=>n>=1e8?(n/1e8).toFixed(2).replace(/\.?0+$/,'')+'억':Math.round(n/1e4).toLocaleString()+'만';
+/* 증권사 선택 영역으로 바로 이동 (텍스트 프래그먼트: 지원하지 않는 브라우저에서는 페이지 맨 위로 열림) */
+const HOME_URL='https://www.worldvision.or.kr/supportGuide/stockSupport#:~:text=%EC%82%AC%EC%9A%A9%20%EC%A4%91%EC%9D%B8%20%EC%A6%9D%EA%B6%8C%EC%82%AC%EB%A5%BC%20%EC%84%A0%ED%83%9D%ED%95%98%EC%84%B8%EC%9A%94';
+const st={biz:null,type:null,step:1};
+let DATA=MOCK, LIVE=false;
+
+/* 그래프 */
+function board(){
+  const m=DATA, g=m.goal||1, pr=Math.min(100,m.pledged/g*100), rc=Math.min(pr,m.received/g*100);
+  const wk=(m.weekly&&m.weekly.length>1)?m.weekly:null;
+  const sb=document.getElementById('sampleBadge');if(sb)sb.style.display=LIVE?'none':'';
+  const bars=BIZ.map(b=>{const d=(m.byBiz&&m.byBiz[b.id])||{p:0,r:0},mx=g/2.2;
+    return `<div class="bar"><div class="lab">${b.name}<span>${won(d.p)}원</span></div>
+    <div class="meter"><span class="m-done" style="width:0" data-w="${d.r/mx*100}"></span><span class="m-pledge" style="width:0" data-w="${(d.p-d.r)/mx*100}"></span></div></div>`}).join('');
+  const W=520,H=130,P=8,mx=wk?Math.max(...wk)*1.1||1:1;
+  const pts=(wk||[]).map((v,i)=>[P+i*(W-2*P)/(m.weekly.length-1),H-P-v/mx*(H-2*P)]);
+  const line=pts.length?pts.map((p,i)=>(i?'L':'M')+p[0].toFixed(1)+' '+p[1].toFixed(1)).join(' '):'';
+  const supHtml=(m.supporters&&m.supporters.length)?`<h4 style="margin-top:18px">함께한 꿈주주</h4><div class="sup">${m.supporters.map(x=>`<span>${x.label} · ${x.biz.replace(' 기금','')}</span>`).join('')}</div>`:'';
+  $('#board').innerHTML=`
+  <div><p style="font-size:13px;color:var(--mute)">약정 누적 · 목표 ${won(m.goal)}원</p>
+    <p class="big">${won(m.pledged)}<small>원</small></p>
+    <div class="meter"><span class="m-done" style="width:0" data-w="${rc}"></span><span class="m-pledge" style="width:0" data-w="${pr-rc}"></span></div>
+    <div class="legend"><span><b style="background:var(--or)"></b>입고완료 ${won(m.received)}원</span><span><b style="background:#FFB48A"></b>약정 ${won(m.pledged-m.received)}원</span><span>목표 달성 ${pr.toFixed(0)}%</span></div>
+    <div class="kpis"><div class="kpi"><p>참여 임직원</p><strong>${m.participants}명</strong></div><div class="kpi"><p>기부 주식</p><strong>${m.shares}주</strong></div><div class="kpi"><p>달성률</p><strong>${pr.toFixed(0)}%</strong></div></div></div>
+  <div class="bars"><h4>기금별 현황</h4>${bars}</div>
+  <div class="trend">${pts.length?`<h4>주차별 약정 누적</h4>
+    <svg viewBox="0 0 ${W} ${H}" width="100%" role="img" aria-label="주차별 약정 누적 추이">
+      <path d="${line} L${pts.at(-1)[0]} ${H-P} L${pts[0][0]} ${H-P}Z" fill="#FF5A19" opacity=".12"/>
+      <path d="${line}" fill="none" stroke="#FF5A19" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="${pts.at(-1)[0]}" cy="${pts.at(-1)[1]}" r="5" fill="#FF5A19"/></svg>`:''}${supHtml}
+    <p class="note">※ 합계만 공개되며 개인 정보는 노출되지 않습니다. 입고완료 금액은 입고일 종가 기준으로 확정됩니다.${LIVE?' 평가액은 자산기금팀 확인 후 반영됩니다.':''}</p></div>`;
+  requestAnimationFrame(()=>setTimeout(()=>document.querySelectorAll('[data-w]').forEach(e=>e.style.width=e.dataset.w+'%'),60));
+}
+
+/* 단계 */
+const LBL=['사업 선택','유형 선택','홈페이지에서 이어가기'];
+function go(n,quiet){
+  st.step=n;
+  document.querySelectorAll('.panel').forEach(p=>p.classList.toggle('on',+p.dataset.p===n));
+  $('#steps').innerHTML=LBL.map((l,i)=>{const k=i+1,c=n>k?'done':n===k?'on':'';return `<div class="pill ${c}"><i>${n>k?'✓':k}</i>${l}</div>`}).join('');
+  if(n===2||n===3)picked();
+  if(!quiet)$('#join').scrollIntoView({behavior:'smooth'});
+}
+function picked(){
+  const b=BIZ.find(x=>x.id===st.biz),t=TYPES.find(x=>x.id===st.type);
+  const h=`<span class="chip">${b.name}</span>`+(t?`<span class="chip">${t.name}</span>`:'');
+  $('#pk2').innerHTML=h;$('#pk3').innerHTML=h;
+  $('#homeLink').href=HOME_URL;
+}
+function renderBiz(){
+  $('#bizCards').innerHTML=BIZ.map(b=>`<button class="biz ${st.biz===b.id?'sel':''}" data-id="${b.id}"><span class="chk">✓</span><img src="${b.img}" alt="${b.name}"><div class="bd"><p class="en">${b.en}</p><h4>${b.name}</h4><p>${b.desc}</p></div></button>`).join('');
+  $('#n1').disabled=!st.biz;
+}
+function renderType(){
+  $('#typeCards').innerHTML=TYPES.map(t=>`<button class="type ${st.type===t.id?'sel':''}" data-id="${t.id}"><span class="tag">${t.tag}</span><h4>${t.name}</h4><p class="one">${t.one}</p><ul>${t.pts.map(p=>`<li>${p}</li>`).join('')}</ul></button>`).join('');
+  $('#n2').disabled=!st.type;
+}
+document.addEventListener('click',e=>{
+  const t=e.target.closest('button');if(!t)return;
+  if(t.classList.contains('biz')){st.biz=t.dataset.id;renderBiz()}
+  else if(t.classList.contains('type')){st.type=t.dataset.id;renderType()}
+  else if(t.dataset.pick){st.biz=t.dataset.pick;st.type=null;renderBiz();renderType();go(2)}
+  else if(t.dataset.go)go(+t.dataset.go);
+});
+$('#n1').onclick=()=>go(2);$('#n2').onclick=()=>go(3);
+
+/* 모바일 메뉴 */
+const dr=$('#drawer'),bg=$('#burger');
+bg.onclick=()=>{const o=dr.classList.toggle('open');bg.setAttribute('aria-expanded',o);bg.textContent=o?'✕':'☰'};
+dr.addEventListener('click',e=>{if(e.target.closest('a')){dr.classList.remove('open');bg.textContent='☰'}});
+
+/* 선택 내용 복사 */
+$('#copyMine').onclick=async e=>{
+  const b=BIZ.find(x=>x.id===st.biz),t=TYPES.find(x=>x.id===st.type),btn=e.currentTarget;
+  const txt=`[주주클럽] 기금: ${b.name} / 유형: ${t.name}`;
+  try{await navigator.clipboard.writeText(txt);btn.textContent='복사됨 ✓'}catch(_){btn.textContent=txt}
+  setTimeout(()=>btn.textContent='선택 내용 복사',2000);
+};
+
+async function loadSummary(){
+  if(!API_URL)return;
+  try{
+    const r=await fetch(API_URL+'?action=summary',{cache:'no-store'});
+    const j=await r.json();
+    if(r.ok&&j&&j.ok){DATA=j;LIVE=true;board()}
+  }catch(e){}
+}
+board();renderBiz();renderType();go(1,true);loadSummary();
+</script>
+</body>
+</html>
