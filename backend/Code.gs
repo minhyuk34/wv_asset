@@ -19,7 +19,7 @@ const HEAD = ['접수일','이름','기금','유형','종목','수량','평가�
 const COL = {}; HEAD.forEach((h, i) => COL[h] = i);
 
 const BIZ    = {domestic:'국내 꿈지원 기금', global:'해외 꿈지원 기금', water:'해외 식수사업 기금'};
-const TYPES  = ['소진형', '기금형'];
+const TYPES  = ['판매형', '기금형'];
 const STATUS = ['약정', '입고완료', '취소'];
 
 /* ───────── 최초 1회 실행 ───────── */
