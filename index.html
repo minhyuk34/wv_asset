@@ -94,6 +94,7 @@ a{color:inherit}
 .fund-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
 .fund-card{position:relative;border-radius:6px;overflow:hidden;background:#000;aspect-ratio:3/4.3;min-height:480px;color:#fff;display:flex;flex-direction:column;justify-content:space-between}
 .fund-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.fund-card[data-biz="water"] img{object-position:86% 50%}
 .fund-card:hover img{transform:scale(1.04)}
 .fund-card::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.45) 0%,rgba(0,0,0,0) 30%,rgba(0,0,0,.18) 48%,rgba(0,0,0,.82) 100%)}
 .fc-top,.fc-cap{position:relative;z-index:2}
@@ -382,7 +383,7 @@ a{color:inherit}
         <div><div class="n">01</div><h3>기금과 방식 선택</h3><p>응원하고 싶은 기금과<br>판매형·기금형 중 방식을 고릅니다.</p></div>
         <div><div class="n">02</div><h3>증권사 주식 이체</h3><p>월드비전 홈페이지의 안내에 따라<br>증권사에서 주식을 이체합니다.</p></div>
         <div><div class="n">03</div><h3>약정서 제출</h3><p>기부 내용과 선택한 사항을 담은<br>약정서를 작성해 제출합니다.</p></div>
-        <div><div class="n">04</div><h3>확인과 결과 안내</h3><p>이체 및 약정 내용을 확인하고<br>이후 사업 결과를 안내받습니다.</p></div>
+        <div><div class="n">04</div><h3>확인 및 결과 안내</h3><p>이체 및 약정 내용을 확인하고<br>이후 사업 결과를 안내받습니다.</p></div>
       </div>
     </div>
   </section>
