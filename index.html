@@ -63,6 +63,14 @@ a{color:inherit}
   .poster-stage img.poster{position:static;display:block;width:100%;height:auto}
 }
 
+.poster-copy{position:relative;background:var(--stage);color:#fff;text-align:center;padding:34px 24px 54px;margin-top:-1px}
+.poster-copy::before{content:"";position:absolute;left:0;right:0;top:-70px;height:70px;background:linear-gradient(180deg,rgba(41,43,36,0),var(--stage));pointer-events:none}
+.pc-eyebrow{font-size:13px;font-weight:800;letter-spacing:.2em;color:var(--yellow);margin-bottom:16px}
+.pc-grid{display:flex;justify-content:center;gap:14px 56px;flex-wrap:wrap}
+.pc-grid p{display:flex;align-items:center;gap:14px;font-size:clamp(22px,3.2vw,36px);font-weight:900;letter-spacing:-.03em;line-height:1.3}
+.pc-grid b{width:38px;height:38px;border-radius:50%;border:1.5px solid var(--yellow);color:var(--yellow);display:grid;place-items:center;font-size:15px;flex:none}
+.pc-grid em{font-style:normal;color:var(--yellow)}
+
 /* intro */
 .visual-intro{background:#fff}
 .intro-manifesto{padding:110px 28px 80px;text-align:center}
@@ -94,7 +102,7 @@ a{color:inherit}
 .fund-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
 .fund-card{position:relative;border-radius:6px;overflow:hidden;background:#000;aspect-ratio:3/4.3;min-height:480px;color:#fff;display:flex;flex-direction:column;justify-content:space-between}
 .fund-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s}
-.fund-card[data-biz="water"] img{object-position:86% 50%}
+.fund-card[data-biz="relief"] img{object-position:86% 50%}
 .fund-card:hover img{transform:scale(1.04)}
 .fund-card::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.45) 0%,rgba(0,0,0,0) 30%,rgba(0,0,0,.18) 48%,rgba(0,0,0,.82) 100%)}
 .fc-top,.fc-cap{position:relative;z-index:2}
@@ -145,15 +153,22 @@ a{color:inherit}
 .sup span{background:var(--cream);font-weight:700;font-size:13px;padding:5px 13px;border-radius:99px}
 .note{font-size:12px;color:var(--mute);margin-top:10px}
 
-/* selection (기금 카드 + 방식 선택 통합) */
-.step-label{font-size:14px;font-weight:700;margin:-10px 0 18px;opacity:.95}
-.step-label b{background:#fff;color:var(--or);border-radius:99px;padding:3px 12px;font-size:12px;letter-spacing:.06em;margin-right:8px}
+/* selection (기금 카드 + 방법 선택 통합) */
+.step-head{margin:0 0 22px}
+.step-head .st{display:inline-block;background:#fff;color:var(--or);font-weight:800;font-size:13px;letter-spacing:.1em;padding:4px 14px;border-radius:99px}
+.step-head h3{font-size:clamp(26px,3.4vw,38px);font-weight:900;letter-spacing:-.04em;line-height:1.25;margin:10px 0 4px;color:#fff}
+.step-head p{font-size:15px;opacity:.92}
+.step-head.dark .st{background:var(--or);color:#fff}
+.step-head.dark h3{color:var(--ink);font-size:clamp(22px,2.6vw,30px)}
+.step-head.dark p{color:var(--mute);opacity:1}
+.next-steps{margin:16px 0 0 18px;font-size:13.5px;color:var(--ink)}
+.next-steps li{padding:2px 0}
+
 .fund-card{cursor:pointer}
 .fund-card.sel{outline:4px solid #fff;outline-offset:-4px}
 .fund-card.sel::before{content:"✓ 선택됨";position:absolute;top:16px;right:16px;z-index:3;background:#fff;color:var(--or);font-weight:800;font-size:12px;padding:4px 11px;border-radius:99px}
 .fund-grid.has-sel .fund-card:not(.sel){opacity:.7}
 .choose{display:grid;grid-template-columns:1.15fr 1fr;gap:0;margin-top:26px;background:#fff;color:var(--ink);border-radius:6px;padding:34px}
-.choose h3{font-size:24px;font-weight:900;margin:6px 0 18px}
 .choose .eyebrow{font-size:11.5px}
 .opts{display:grid;gap:10px}
 .opts.two{grid-template-columns:1fr 1fr}
@@ -165,16 +180,14 @@ a{color:inherit}
 .ch-left{padding-right:34px}
 .ch-left .small-note{margin-top:16px}
 .choice{padding-left:34px;border-left:1px solid var(--line)}
-.choice dl{border-top:2px solid var(--ink)}
+.choice dl{border-top:2px solid var(--ink);margin-bottom:18px}
 .choice dt{font-size:12.5px;color:var(--mute);margin-top:14px}
 .choice dd{font-weight:800;font-size:18px}
 .choice dd.empty{color:#A9A59B;font-weight:600;font-size:15px}
-.choice .hint{font-size:13px;color:var(--mute);margin:18px 0}
+.choice .hint{font-size:13px;color:var(--mute);margin:10px 0 0}
 .choice .go{display:flex;align-items:center;justify-content:center;gap:8px;background:var(--or);color:#fff;font-weight:800;padding:16px;border-radius:2px;text-decoration:none;transition:.15s}
 .choice .go[aria-disabled=true]{background:#D9D5CC;color:#fff;pointer-events:none}
 .choice .go:hover{background:var(--or-d)}
-.choice .copy{width:100%;margin-top:10px;border:1.5px solid var(--ink);padding:12px;font-weight:700;border-radius:2px;font-size:14px}
-.choice .copy:disabled{opacity:.35;cursor:not-allowed}
 .choice .fine{font-size:12px;color:var(--mute);margin-top:12px}
 
 /* faq */
@@ -259,7 +272,7 @@ a{color:inherit}
       <img class="a" src="assets/logo_slogan.png" alt="후원을 멈추는 후원">
     </a>
     <nav class="desktop-nav" aria-label="주요 메뉴">
-      <a href="#about">캠페인 소개</a><a href="#funds">기금 안내</a><a href="#status">기부 현황</a><a href="#process">참여 방법</a><a href="#faq">FAQ</a>
+      <a href="#about">캠페인 소개</a><a href="#process">참여 방법</a><a href="#funds">기금 안내</a><a href="#status">기부 현황</a><a href="#faq">FAQ</a>
     </nav>
     <div class="header-actions">
       <span class="staff-label">주주클럽 · 직원 캠페인</span>
@@ -267,7 +280,7 @@ a{color:inherit}
     </div>
   </div>
   <nav class="mobile-menu" id="mobileMenu" aria-label="모바일 메뉴">
-    <a href="#about">캠페인 소개</a><a href="#funds">기금 안내</a><a href="#status">기부 현황</a><a href="#process">참여 방법</a><a href="#funds">참여 선택하기</a><a href="#faq">FAQ</a>
+    <a href="#about">캠페인 소개</a><a href="#process">참여 방법</a><a href="#funds">기금 고르기</a><a href="#status">기부 현황</a><a href="#faq">FAQ</a>
   </nav>
 </header>
 
@@ -281,6 +294,14 @@ a{color:inherit}
     <div class="stage-caption stage-caption-right"><span>JUJU CLUB</span><span>2026 CAMPAIGN</span></div>
     <a class="poster-scroll" href="#about">우리의 이야기 시작하기 <span>↓</span></a>
   </section>
+
+  <div class="poster-copy" id="posterCopy">
+    <p class="pc-eyebrow">주주클럽이란?</p>
+    <div class="pc-grid">
+      <p><b>1</b><span><em>주</em>식을 <em>주</em>세요</span></p>
+      <p><b>2</b><span>아이들의 꿈에 <em>주주</em>가 되어주세요</span></p>
+    </div>
+  </div>
 
   <section id="about" class="visual-intro">
     <div class="intro-manifesto container">
@@ -309,6 +330,19 @@ a{color:inherit}
     </div>
   </section>
 
+  <section id="process" class="section process">
+    <div class="container">
+      <p class="eyebrow">HOW TO JOIN</p>
+      <h2>참여는 이렇게 진행돼요</h2>
+      <div class="steps4">
+        <div><div class="n">01</div><h3>기금과 기부 방법 고르기</h3><p>이 페이지에서 응원할 기금과<br>기부 방법을 골라요.</p></div>
+        <div><div class="n">02</div><h3>증권사 앱에서 주식 보내기</h3><p>월드비전 홈페이지의 안내대로<br>이용 중인 증권사 앱에서 이체해요.</p></div>
+        <div><div class="n">03</div><h3>온라인 약정서 쓰기</h3><p>월드비전 홈페이지에서<br>약정서를 작성하고 제출해요.</p></div>
+        <div><div class="n">04</div><h3>확인 및 결과 안내</h3><p>입고를 확인하고,<br>이후 사업 결과를 안내해 드려요.</p></div>
+      </div>
+    </div>
+  </section>
+
   <section id="funds" class="visual-funds">
     <div class="container">
       <div class="funds-opening">
@@ -317,50 +351,48 @@ a{color:inherit}
         <p>마음이 향하는 곳에, 가능성을 더해 주세요.</p>
       </div>
 
-      <p class="step-label"><b>STEP 1</b> 응원할 기금을 눌러 선택하세요</p>
+      <div class="step-head"><span class="st">STEP 1</span><h3>응원할 기금 선택하기</h3><p>마음이 가는 기금 카드를 눌러주세요.</p></div>
       <div class="fund-grid" id="fundGrid">
         <article class="fund-card" data-biz="domestic">
           <img src="assets/domestic.jpg" alt="교실에서 웃고 있는 아이들">
-          <div class="fc-top"><span class="no">01</span><div><h3>국내 꿈지원 기금</h3><small>DOMESTIC DREAM</small></div></div>
+          <div class="fc-top"><span class="no">01</span><div><h3>국내 꿈성장기금</h3><small>DOMESTIC DREAM</small></div></div>
           <div class="fc-cap"><h4>꿈을 말할 수 있는 오늘,<br>꿈에 다가가는 내일.</h4>
-            <p>우리 곁의 아이들이 배움과 경험을 통해 자신의 가능성을 발견하도록 응원합니다.</p>
+            <p>가정 형편 때문에 배움과 경험의 기회를 놓치는 우리 곁의 아이들이 자신의 가능성을 발견하도록 응원합니다.</p>
             <button data-pick="domestic">이 꿈의 주주 되기 <span>↗</span></button></div>
         </article>
         <article class="fund-card" data-biz="global">
           <img src="assets/global.jpg" alt="환하게 웃으며 손을 흔드는 아이들">
-          <div class="fc-top"><span class="no">02</span><div><h3>해외 꿈지원 기금</h3><small>GLOBAL DREAM</small></div></div>
+          <div class="fc-top"><span class="no">02</span><div><h3>해외 자립마을 기금</h3><small>SELF-RELIANT VILLAGE</small></div></div>
           <div class="fc-cap"><h4>어디에 태어났든,<br>꿈의 크기는 같으니까.</h4>
-            <p>국경 너머 아이들에게 배움과 성장의 기회를 연결해 스스로 내일을 그려갈 수 있도록 함께합니다.</p>
+            <p>국경 너머 아이들이 자라는 마을이 스스로 일어설 수 있도록, 오래 이어질 변화를 함께 만듭니다.</p>
             <button data-pick="global">이 꿈의 주주 되기 <span>↗</span></button></div>
         </article>
-        <article class="fund-card" data-biz="water">
+        <article class="fund-card" data-biz="relief">
           <img src="assets/water.jpg" alt="깨끗한 물을 마시며 웃는 아이">
-          <div class="fc-top"><span class="no">03</span><div><h3>해외 식수사업 기금</h3><small>CLEAN WATER</small></div></div>
-          <div class="fc-cap"><h4>깨끗한 물 한 잔에서<br>시작되는 가능성.</h4>
-            <p>깨끗한 물이 아이들의 일상에 닿도록, 건강한 성장의 바탕을 함께 만듭니다.</p>
-            <button data-pick="water">이 내일의 주주 되기 <span>↗</span></button></div>
+          <div class="fc-top"><span class="no">03</span><div><h3>긴급구호 기금</h3><small>EMERGENCY RELIEF</small></div></div>
+          <div class="fc-cap"><h4>가장 위급한 순간,<br>가장 먼저 닿는 도움.</h4>
+            <p>재난과 위기 속에서 아이들과 가족에게 꼭 필요한 도움이 빠르게 닿도록 함께합니다.</p>
+            <button data-pick="relief">이 내일의 주주 되기 <span>↗</span></button></div>
         </article>
       </div>
       <p class="swipe-hint">좌우로 밀어 세 가지 기금을 확인하세요 →</p>
 
       <div class="choose" id="choose">
         <div class="ch-left">
-          <p class="eyebrow">STEP 2</p>
-          <h3>어떻게 기부할까요?</h3>
+          <div class="step-head dark"><span class="st">STEP 2</span><h3>기부 방법 선택하기</h3><p>기부한 주식을 어떻게 쓸지 골라주세요. 홈페이지 약정서의 ‘약정기금 유형’과 같습니다.</p></div>
           <div class="opts two" id="optType"></div>
           <p class="small-note">기금형의 원금 유지와 지속 지원은 운영 목표이며, 원금 보전이나 운용수익을 보장하는 의미는 아닙니다. 세부 운영 조건은 법무·삼성증권 협의 후 확정됩니다.</p>
         </div>
         <aside class="choice" aria-live="polite">
-          <p class="eyebrow">MY CHOICE</p>
-          <h3>내가 응원할 내일</h3>
+          <div class="step-head dark"><span class="st">STEP 3</span><h3>온라인 약정서 쓰러 가기</h3></div>
           <dl>
-            <dt>선택한 기금</dt><dd id="chBiz" class="empty">위에서 기금을 선택해 주세요</dd>
-            <dt>선택한 방식</dt><dd id="chType" class="empty">방식을 선택해 주세요</dd>
+            <dt>선택한 기금</dt><dd id="chBiz" class="empty">STEP 1에서 기금을 선택해 주세요</dd>
+            <dt>선택한 기부 방법</dt><dd id="chType" class="empty">STEP 2에서 방법을 선택해 주세요</dd>
           </dl>
-          <p class="hint" id="chHint">기금과 방식을 모두 선택하면 다음 단계로 이어갈 수 있습니다.</p>
-          <a class="go" id="homeLink" href="#" aria-disabled="true" target="_blank" rel="noopener noreferrer">월드비전 홈페이지에서 이어가기 ↗</a>
-          <button class="copy" id="copyMine" type="button" disabled>선택 내용 복사 (약정서에 적어주세요)</button>
-          <p class="fine">이 페이지의 선택은 신청이 아닙니다. 증권사 이체와 약정서 제출은 월드비전 홈페이지에서 진행됩니다.</p>
+          <a class="go" id="homeLink" href="#" aria-disabled="true" target="_blank" rel="noopener noreferrer">월드비전 홈페이지에서 약정서 쓰기 ↗</a>
+          <p class="hint" id="chHint">기금과 기부 방법을 모두 선택하면 눌러볼 수 있어요.</p>
+          <ol class="next-steps"><li>증권사 앱에서 주식을 월드비전 계좌로 이체하고, <b>이체 완료 화면을 캡처</b>해 두세요.</li><li>약정서 1단계: 기부자 정보를 입력합니다.</li><li>2단계: 이체일, 증권사, 종목, 수량, 취득가를 적고 캡처한 이체확인증을 올립니다.</li><li>3단계: <b>약정기금 유형과 사업을 선택</b>하고 개인정보 동의 후 저장합니다.</li></ol>
+          <p class="fine">이 페이지의 선택은 신청이 아닙니다. 홈페이지의 온라인 약정서까지 제출해야 참여가 완료됩니다.</p>
         </aside>
       </div>
     </div>
@@ -369,22 +401,9 @@ a{color:inherit}
   <section id="status" class="section status" style="padding-top:0">
     <div class="container">
       <p class="eyebrow">LIVE PROGRESS</p>
-      <h2>지금 여기까지 왔습니다 <span class="sample" id="sampleBadge">샘플 데이터</span></h2>
+      <h2>지금까지 모인 마음 <span class="sample" id="sampleBadge">샘플 데이터</span></h2>
       <p class="lead">약정은 신청서가 접수된 금액, 입고완료는 증권사 입고가 확인된 금액입니다.</p>
       <div class="bento" id="bento"></div>
-    </div>
-  </section>
-
-  <section id="process" class="section process">
-    <div class="container">
-      <p class="eyebrow">HOW TO JOIN</p>
-      <h2>주식이 꿈으로 이어지는 과정</h2>
-      <div class="steps4">
-        <div><div class="n">01</div><h3>기금과 방식 선택</h3><p>응원하고 싶은 기금과<br>판매형·기금형 중 방식을 고릅니다.</p></div>
-        <div><div class="n">02</div><h3>증권사 주식 이체</h3><p>월드비전 홈페이지의 안내에 따라<br>증권사에서 주식을 이체합니다.</p></div>
-        <div><div class="n">03</div><h3>약정서 제출</h3><p>기부 내용과 선택한 사항을 담은<br>약정서를 작성해 제출합니다.</p></div>
-        <div><div class="n">04</div><h3>확인 및 결과 안내</h3><p>이체 및 약정 내용을 확인하고<br>이후 사업 결과를 안내받습니다.</p></div>
-      </div>
     </div>
   </section>
 
@@ -395,10 +414,10 @@ a{color:inherit}
       <div class="faq-list">
         <details><summary>‘주주클럽’은 무슨 뜻인가요? <span>+</span></summary><p>‘주식을 주세요’와 ‘아이들의 꿈에 주주가 되어주세요’, 두 문장의 줄임말입니다. 보유한 주식을 나누고, 아이들의 가능성에 함께하는 주주가 되어 달라는 뜻을 담았습니다.</p></details>
         <details><summary>주식 한 주만으로도 참여할 수 있나요? <span>+</span></summary><p>네. 금액이 아니라 ‘몇 주’로 시작할 수 있습니다. 1주 단위로 참여할 수 있습니다.</p></details>
-        <details><summary>판매형과 기금형은 어떻게 다른가요? <span>+</span></summary><p>판매형은 기부 주식을 매각해 정해진 기간 동안 선택한 기금의 사업비로 사용합니다. 기금형은 원금을 유지하고 운용수익으로 지속 지원을 목표로 하며, 원금 보전이나 수익을 보장하지는 않습니다. 기금형의 세부 조건은 협의 후 확정됩니다.</p></details>
+        <details><summary>기부형과 기금형은 어떻게 다른가요? <span>+</span></summary><p>기부형은 기부한 주식을 당일 매도한 뒤 사업비로 배정합니다. 기금형은 기부한 주식에서 나오는 배당금으로 사업비를 배정하며, 원금 유지와 지속 지원을 목표로 합니다. 원금 보전이나 수익을 보장하지는 않으며, 기금형의 세부 조건은 협의 후 확정됩니다.</p></details>
         <details><summary>어떤 주식을 기부할 수 있나요? <span>+</span></summary><p>종목과 증권사에 따라 기부 가능 여부와 이체 절차를 확인해야 합니다. 이용 중인 증권사별 방법은 월드비전 홈페이지 안내를, 궁금한 점은 자산기금팀을 통해 확인해 주세요.</p></details>
         <details><summary>선택 내용을 확인하면 신청이 완료되나요? <span>+</span></summary><p>아니요. 이 페이지에서 고른 내용은 신청이 아닙니다. 월드비전 홈페이지에서 증권사 이체와 약정서 제출까지 마쳐야 참여가 완료됩니다.</p></details>
-        <details><summary>기부금영수증은 어떻게 안내받나요? <span>+</span></summary><p>입고가 확인되면 자산기금팀이 안내합니다. 기부금 평가액은 입고일 종가를 기준으로 산정되며, 영수증 발급 방식은 홈페이지 약정서 작성 단계의 안내를 확인해 주세요.</p></details>
+        <details><summary>기부금영수증은 어떻게 안내받나요? <span>+</span></summary><p>기부가액은 이체일의 한국거래소(KRX) 종가 기준이며, 종가보다 취득가가 낮을 때는 취득가로 기부 처리됩니다. 2025년부터 전자기부금영수증 의무발급이 시행되어, 월드비전에서 발급하는 기부금영수증은 세액공제용으로 사용할 수 없고 국세청 홈택스의 전자기부금영수증을 이용하셔야 합니다.</p></details>
       </div>
     </div>
   </section>
@@ -434,17 +453,17 @@ const API_URL = 'https://script.google.com/macros/s/AKfycbzD1NfwJXeNp8Bla0_sAH1Q
 
 const MOCK = {
   goal: 100000000, pledged: 38400000, received: 21700000, participants: 47, shares: 312,
-  byBiz: {domestic:{p:15200000,r:9400000}, global:{p:12100000,r:7000000}, water:{p:11100000,r:5300000}},
+  byBiz: {domestic:{p:15200000,r:9400000}, global:{p:12100000,r:7000000}, relief:{p:11100000,r:5300000}},
   weekly: [2,5,9,14,19,24,29,33,36,38.4].map(v=>v*1e6)
 };
 const BIZ = [
-  {id:'domestic',name:'국내 꿈지원 기금',sub:'DOMESTIC DREAM'},
-  {id:'global',name:'해외 꿈지원 기금',sub:'GLOBAL DREAM'},
-  {id:'water',name:'해외 식수사업 기금',sub:'CLEAN WATER'}
+  {id:'domestic',name:'국내 꿈성장기금',sub:'DOMESTIC DREAM'},
+  {id:'global',name:'해외 자립마을 기금',sub:'SELF-RELIANT VILLAGE'},
+  {id:'relief',name:'긴급구호 기금',sub:'EMERGENCY RELIEF'}
 ];
 const TYPES = [
-  {id:'spend',name:'판매형',desc:'매각해 정해진 기간 동안<br>사업비로 사용합니다.'},
-  {id:'fund',name:'기금형',desc:'원금을 유지하고 운용수익으로<br>지속 지원을 목표로 합니다.'}
+  {id:'spend',name:'기부형',desc:'당일 매도 후<br>사업비를 배정합니다.'},
+  {id:'fund',name:'기금형',desc:'배당금으로<br>사업비를 배정합니다.'}
 ];
 const HOME_URL='https://www.worldvision.or.kr/supportGuide/stockSupport#:~:text=%EC%82%AC%EC%9A%A9%20%EC%A4%91%EC%9D%B8%20%EC%A6%9D%EA%B6%8C%EC%82%AC%EB%A5%BC%20%EC%84%A0%ED%83%9D%ED%95%98%EC%84%B8%EC%9A%94';
 const $=s=>document.querySelector(s);
@@ -457,7 +476,7 @@ function bento(){
   const m=DATA,g=m.goal||1,pr=Math.min(100,m.pledged/g*100),rc=Math.min(pr,m.received/g*100);
   const wk=(m.weekly&&m.weekly.length>1)?m.weekly:null;
   const sb=$('#sampleBadge'); if(sb) sb.style.display=LIVE?'none':'';
-  const bb=id=>(m.byBiz&&m.byBiz[id])||{p:0,r:0};
+  const bb=id=>(m.byBiz&&(m.byBiz[id]||(id==='relief'&&m.byBiz.water)))||{p:0,r:0};
   const W=520,H=120,P=8,mx=wk?Math.max(...wk)*1.1||1:1;
   const pts=(wk||[]).map((v,i)=>[P+i*(W-2*P)/(wk.length-1),H-P-v/mx*(H-2*P)]);
   const line=pts.length?pts.map((p,i)=>(i?'L':'M')+p[0].toFixed(1)+' '+p[1].toFixed(1)).join(' '):'';
@@ -472,20 +491,20 @@ function bento(){
   <div class="bx b-cr"><p class="n">${(m.shares||0).toLocaleString()}</p><div><p class="l">기부된 주식(주)</p><p class="s">1주부터 시작한 마음</p></div></div>
   <div class="bx b-cr"><p class="n">${won(m.received)}</p><div><p class="l">입고 완료(원)</p><p class="s">증권사 입고 확인 기준</p></div></div>
   <div class="bx b-tr"><p class="n">${pr.toFixed(0)}%</p><div><p class="l">목표 달성률</p><p class="s">약정 기준</p></div></div>
-  <div class="bx b-ln"><p class="n">${won(bb('domestic').p)}</p><div><p class="l">국내 꿈지원 기금</p><p class="s">입고 ${won(bb('domestic').r)}원</p></div></div>
-  <div class="bx b-ln"><p class="n">${won(bb('global').p)}</p><div><p class="l">해외 꿈지원 기금</p><p class="s">입고 ${won(bb('global').r)}원</p></div></div>
-  <div class="bx b-ln"><p class="n">${won(bb('water').p)}</p><div><p class="l">해외 식수사업 기금</p><p class="s">입고 ${won(bb('water').r)}원</p></div></div>
+  <div class="bx b-ln"><p class="n">${won(bb('domestic').p)}</p><div><p class="l">국내 꿈성장기금</p><p class="s">입고 ${won(bb('domestic').r)}원</p></div></div>
+  <div class="bx b-ln"><p class="n">${won(bb('global').p)}</p><div><p class="l">해외 자립마을 기금</p><p class="s">입고 ${won(bb('global').r)}원</p></div></div>
+  <div class="bx b-ln"><p class="n">${won(bb('relief').p)}</p><div><p class="l">긴급구호 기금</p><p class="s">입고 ${won(bb('relief').r)}원</p></div></div>
   <div class="bx trend">${pts.length?`<h4>주차별 약정 누적</h4>
     <svg viewBox="0 0 ${W} ${H}" width="100%" role="img" aria-label="주차별 약정 누적 추이">
       <path d="${line} L${pts.at(-1)[0]} ${H-P} L${pts[0][0]} ${H-P}Z" fill="#FF5F00" opacity=".12"/>
       <path d="${line}" fill="none" stroke="#FF5F00" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
       <circle cx="${pts.at(-1)[0]}" cy="${pts.at(-1)[1]}" r="5" fill="#FF5F00"/></svg>`:''}
     ${sup?'<h4 style="margin-top:14px">함께한 꿈주주</h4>'+sup:''}
-    <p class="note">※ 합계만 공개되며 개인 정보는 노출되지 않습니다. 입고완료 금액은 입고일 종가 기준으로 확정됩니다.${LIVE?' 평가액은 자산기금팀 확인 후 반영됩니다.':''}</p></div>`;
+    <p class="note">※ 합계만 공개되며 개인 정보는 노출되지 않습니다. 입고완료 금액은 이체일의 KRX 종가(취득가가 더 낮으면 취득가) 기준으로 확정됩니다.${LIVE?' 평가액은 자산기금팀 확인 후 반영됩니다.':''}</p></div>`;
   requestAnimationFrame(()=>setTimeout(()=>document.querySelectorAll('[data-w]').forEach(e=>e.style.width=e.dataset.w+'%'),60));
 }
 
-/* 참여 선택 (기금 카드 + 방식) */
+/* 참여 선택 (기금 카드 + 방법) */
 function renderSel(){
   document.querySelectorAll('.fund-card').forEach(c=>{
     const on=c.dataset.biz===st.biz;c.classList.toggle('sel',on);
@@ -495,12 +514,11 @@ function renderSel(){
   $('#optType').innerHTML=TYPES.map(t=>`<button class="opt ${st.type===t.id?'sel':''}" data-type="${t.id}">${t.name}<small>${t.desc}</small></button>`).join('');
   const b=BIZ.find(x=>x.id===st.biz),t=TYPES.find(x=>x.id===st.type);
   const cb=$('#chBiz'),ct=$('#chType');
-  cb.textContent=b?b.name:'위에서 기금을 선택해 주세요';cb.classList.toggle('empty',!b);
-  ct.textContent=t?t.name:'방식을 선택해 주세요';ct.classList.toggle('empty',!t);
+  cb.textContent=b?b.name:'STEP 1에서 기금을 선택해 주세요';cb.classList.toggle('empty',!b);
+  ct.textContent=t?t.name:'STEP 2에서 방법을 선택해 주세요';ct.classList.toggle('empty',!t);
   const ok=!!(b&&t);
   const a=$('#homeLink');a.setAttribute('aria-disabled',ok?'false':'true');a.href=ok?HOME_URL:'#';
-  $('#copyMine').disabled=!ok;
-  $('#chHint').textContent=ok?'선택이 끝났어요. 월드비전 홈페이지에서 증권사 이체와 약정서 제출을 이어가세요.':'기금과 방식을 모두 선택하면 다음 단계로 이어갈 수 있습니다.';
+  $('#chHint').textContent=ok?'준비됐어요! 위 버튼을 눌러 홈페이지에서 이어가세요.':'기금과 기부 방법을 모두 선택하면 눌러볼 수 있어요.';
 }
 document.addEventListener('click',e=>{
   const btn=e.target.closest('button');
@@ -511,13 +529,6 @@ document.addEventListener('click',e=>{
     if(btn&&btn.dataset.pick)$('#choose').scrollIntoView({behavior:'smooth',block:'center'});
   }
 });
-$('#copyMine').onclick=async e=>{
-  const b=BIZ.find(x=>x.id===st.biz),t=TYPES.find(x=>x.id===st.type),btn=e.currentTarget;
-  if(!b||!t)return;
-  const txt=`[주주클럽] 기금: ${b.name} / 유형: ${t.name}`;
-  try{await navigator.clipboard.writeText(txt);btn.textContent='복사됨 ✓'}catch(_){btn.textContent=txt}
-  setTimeout(()=>btn.textContent='선택 내용 복사 (약정서에 적어주세요)',2200);
-};
 
 /* 모바일 메뉴 */
 const mt=$('#menuToggle'),mm=$('#mobileMenu');

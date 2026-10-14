@@ -18,8 +18,8 @@ const CACHE_SEC    = 300;
 const HEAD = ['접수일','이름','기금','유형','종목','수량','평가액(원)','상태','입고일','공개표시명','메모'];
 const COL = {}; HEAD.forEach((h, i) => COL[h] = i);
 
-const BIZ    = {domestic:'국내 꿈지원 기금', global:'해외 꿈지원 기금', water:'해외 식수사업 기금'};
-const TYPES  = ['판매형', '기금형'];
+const BIZ    = {domestic:'국내 꿈성장기금', global:'해외 자립마을 기금', relief:'긴급구호 기금'};
+const TYPES  = ['기부형', '기금형'];
 const STATUS = ['약정', '입고완료', '취소'];
 
 /* ───────── 최초 1회 실행 ───────── */
@@ -39,7 +39,7 @@ function setup() {
   sh.setColumnWidths(1, HEAD.length, 110);
   sh.getRange(1, COL['이름'] + 1).setNote('입고 확인 때 기부자를 찾기 위한 내부용입니다. 주민번호·주소·연락처는 이 시트에 넣지 마세요. (공개 API로는 나가지 않습니다)');
   sh.getRange(1, COL['공개표시명'] + 1).setNote('참여자가 이름·팀명 공개에 동의한 경우에만 적으세요. 비워두면 익명으로 집계됩니다.');
-  sh.getRange(1, COL['평가액(원)'] + 1).setNote('입고일 종가 × 수량. 비워두면 인원·주식 수에만 반영됩니다.');
+  sh.getRange(1, COL['평가액(원)'] + 1).setNote('이체일 KRX 종가(취득가가 더 낮으면 취득가) × 수량. 비워두면 인원·주식 수에만 반영됩니다.');
 
   const st = ss.getSheetByName(SHEET_SET) || ss.insertSheet(SHEET_SET);
   if (st.getLastRow() < 2) {
@@ -95,7 +95,7 @@ function buildSummary_() {
   const sh = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(SHEET_LEDGER);
   const rows = sh && sh.getLastRow() > 1 ? sh.getRange(2, 1, sh.getLastRow() - 1, HEAD.length).getValues() : [];
   const key = {}; Object.keys(BIZ).forEach(k => key[BIZ[k]] = k);
-  const byBiz = {domestic: {p: 0, r: 0}, global: {p: 0, r: 0}, water: {p: 0, r: 0}};
+  const byBiz = {domestic: {p: 0, r: 0}, global: {p: 0, r: 0}, relief: {p: 0, r: 0}};
   let pledged = 0, received = 0, participants = 0, shares = 0;
   const weeks = {}, sup = [];
 
