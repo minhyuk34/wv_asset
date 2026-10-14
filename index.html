@@ -74,6 +74,13 @@ a{color:inherit}
 .landscape-band h3{font-size:clamp(30px,5vw,52px);font-weight:900;letter-spacing:-.035em;line-height:1.25;margin:18px 0 14px}
 .landscape-band p{font-size:clamp(15px,1.8vw,18px);opacity:.92}
 .dream-landscape img{display:block;width:100%;height:auto;max-height:90svh;object-fit:cover}
+.name-meaning{text-align:center;padding-top:0;padding-bottom:100px}
+.nm-title{font-size:clamp(24px,3.6vw,38px);font-weight:900;letter-spacing:-.035em;line-height:1.35;margin:12px 0 0}
+.nm-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:860px;margin:34px auto 0}
+.nm-card{text-align:left;border:1px solid var(--line);border-top:3px solid var(--or);padding:28px 28px 30px;background:#fff}
+.nm-card .n{font-size:13px;font-weight:800;color:var(--or);letter-spacing:.14em}
+.nm-card p{font-size:clamp(21px,2.6vw,30px);font-weight:900;letter-spacing:-.035em;line-height:1.35;margin-top:10px}
+.nm-card em{font-style:normal;color:var(--or)}
 .intro-after{text-align:center;padding:80px 28px 100px;font-size:clamp(17px,2.2vw,22px);color:var(--mute)}
 .intro-after strong{display:block;color:var(--ink);font-weight:800;margin-top:6px}
 
@@ -194,7 +201,8 @@ a{color:inherit}
 .dock{position:fixed;left:0;right:0;bottom:0;z-index:70;background:var(--dark);color:#fff;border-top:1px solid rgba(255,255,255,.12)}
 .dock-inner{max-width:1280px;margin:0 auto;padding:12px 28px;display:flex;align-items:center;justify-content:space-between;gap:16px}
 .dock .t{display:flex;align-items:center;gap:14px}
-.dock .t i{font-style:normal;color:var(--or);font-size:24px}
+.dock .t i{font-style:normal;color:var(--or);display:block;line-height:0}
+.dock .t i svg{width:34px;height:34px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
 .dock .t b{display:block;font-size:14.5px}
 .dock .t small{display:block;font-size:12px;opacity:.65}
 .dock a.btn{background:var(--or);color:#fff;font-weight:800;padding:14px 26px;text-decoration:none;display:inline-flex;gap:10px;border-radius:2px;white-space:nowrap}
@@ -228,6 +236,8 @@ a{color:inherit}
   .stage-caption{display:none}
       .section,.visual-funds{padding:76px 0}
   .intro-manifesto{padding:76px 20px 56px}
+  .nm-grid{grid-template-columns:1fr}
+  .name-meaning{padding-bottom:70px}
   .intro-after{padding:56px 20px 70px}
   .opts.two{grid-template-columns:1fr}
   .dock-inner{padding:10px 16px}
@@ -276,6 +286,14 @@ a{color:inherit}
       <h2>아이들의 꿈에도<br><em>주주가 필요합니다.</em></h2>
       <p class="lead">내가 믿고 투자한 회사의 가치가<br>아이의 내일을 여는 힘이 됩니다.</p>
       <span class="intro-line"></span>
+    </div>
+    <div class="name-meaning container">
+      <p class="eyebrow">ABOUT THE NAME</p>
+      <h3 class="nm-title">‘주주클럽’은<br>두 가지 마음의 줄임말입니다.</h3>
+      <div class="nm-grid">
+        <div class="nm-card"><span class="n">01</span><p><em>주</em>식을 <em>주</em>세요</p></div>
+        <div class="nm-card"><span class="n">02</span><p>아이들의 꿈에<br><em>주주</em>가 되어주세요</p></div>
+      </div>
     </div>
     <div class="landscape-band">
       <span class="pill">주식 한 주부터</span>
@@ -373,6 +391,7 @@ a{color:inherit}
       <p class="eyebrow">QUESTIONS &amp; ANSWERS</p>
       <h2>궁금한 점이 있으신가요?</h2>
       <div class="faq-list">
+        <details><summary>‘주주클럽’은 무슨 뜻인가요? <span>+</span></summary><p>‘주식을 주세요’와 ‘아이들의 꿈에 주주가 되어주세요’, 두 문장의 줄임말입니다. 보유한 주식을 나누고, 아이들의 가능성에 함께하는 주주가 되어 달라는 뜻을 담았습니다.</p></details>
         <details><summary>주식 한 주만으로도 참여할 수 있나요? <span>+</span></summary><p>네. 금액이 아니라 ‘몇 주’로 시작할 수 있습니다. 1주 단위로 참여할 수 있습니다.</p></details>
         <details><summary>판매형과 기금형은 어떻게 다른가요? <span>+</span></summary><p>판매형은 기부 주식을 매각해 정해진 기간 동안 선택한 기금의 사업비로 사용합니다. 기금형은 원금을 유지하고 운용수익으로 지속 지원을 목표로 하며, 원금 보전이나 수익을 보장하지는 않습니다. 기금형의 세부 조건은 협의 후 확정됩니다.</p></details>
         <details><summary>어떤 주식을 기부할 수 있나요? <span>+</span></summary><p>종목과 증권사에 따라 기부 가능 여부와 이체 절차를 확인해야 합니다. 이용 중인 증권사별 방법은 월드비전 홈페이지 안내를, 궁금한 점은 자산기금팀을 통해 확인해 주세요.</p></details>
@@ -402,7 +421,7 @@ a{color:inherit}
 
 <div class="dock">
   <div class="dock-inner">
-    <div class="t"><i>✳</i><div><b>아이의 꿈에 투자하는 한 주</b><small>월드비전 주주클럽 · 참여 선택하기</small></div></div>
+    <div class="t"><i aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><circle cx="12" cy="12" r="6.6"/><path d="M8.6 9l1.6 6.2 1.8-4.8 1.8 4.8 1.6-6.2M7.6 11.2h8.8M7.6 13.4h8.8"/></svg></i><div><b>아이의 꿈에 투자하는 한 주</b><small>월드비전 주주클럽 · 주식을 주세요</small></div></div>
     <a class="btn" href="#funds">꿈주주 되기 <span>↗</span></a>
   </div>
 </div>
