@@ -208,8 +208,15 @@ a{color:inherit}
 .bk-acct .no{font-size:26px;font-weight:900;color:var(--or-d);display:flex;gap:10px;align-items:center;flex-wrap:wrap;letter-spacing:.01em}
 .bk-copy{font-size:12px;font-weight:700;background:var(--dark);color:#fff;border-radius:99px;padding:5px 14px}
 .bk-tip{margin-top:16px;background:var(--or-t,#FFF1E8);border-radius:6px;padding:12px 14px;font-size:13.5px;font-weight:600}
+.bk-more{margin-top:14px;font-size:13.5px;color:var(--mute)}
+.bk-more a{color:var(--ink);font-weight:700}
 .bk-contact{font-size:15px}
 .bk-contact b{display:block;font-size:17px;margin-bottom:6px}
+
+.guide-fab{position:fixed;right:20px;bottom:calc(var(--dockh,70px) + 18px);z-index:68;width:100px;height:100px;border-radius:50%;background:var(--or);color:#fff;display:grid;place-items:center;text-align:center;text-decoration:none;font-weight:800;font-size:13px;line-height:1.3;box-shadow:0 10px 26px rgba(255,95,0,.4);transition:transform .2s,background .2s}
+.guide-fab:hover{transform:scale(1.07);background:var(--or-d)}
+.guide-fab span{display:block;font-size:18px;margin-top:2px;line-height:1}
+@media(max-width:720px){.guide-fab{width:84px;height:84px;font-size:11.5px;right:14px}.poster-scroll{display:none}}
 
 /* faq */
 .faq-list{border-top:2px solid var(--ink)}
@@ -309,7 +316,7 @@ a{color:inherit}
 <main id="main">
   <!-- 화면 가득 포스터 -->
   <section id="top" class="poster-stage">
-    <img class="poster" src="assets/poster.jpg" alt="나의 한 주가 아이의 내일이 된다 — 주주클럽 캠페인 포스터" fetchpriority="high">
+    <img class="poster" width="1050" height="1498" src="assets/poster.jpg" alt="나의 한 주가 아이의 내일이 된다 — 주주클럽 캠페인 포스터" fetchpriority="high">
     <div class="poster-shade"></div>
     <h1 class="visually-hidden">주주클럽 — 아이들의 꿈에도 주주가 필요합니다</h1>
     <div class="stage-caption stage-caption-left"><span>WORLD VISION</span><span>SHARE YOUR TOMORROW</span></div>
@@ -338,7 +345,7 @@ a{color:inherit}
       <h3>묵혀둔 주식이<br>아이의 꿈이 됩니다.</h3>
       <p>기업의 가능성을 믿었던 마음으로,<br>아이의 가능성에도 함께해 주세요.</p>
     </div>
-    <div class="dream-landscape"><img src="assets/main.jpg" alt="블록을 쌓으며 함께 오르는 아이들"></div>
+    <div class="dream-landscape"><img width="1672" height="941" src="assets/main.jpg" alt="블록을 쌓으며 함께 오르는 아이들"></div>
     <div class="intro-after">
       <p>작은 시작이어도 괜찮습니다.</p>
       <strong>한 주에 담은 마음은, 아이의 내일로 이어집니다.</strong>
@@ -397,6 +404,7 @@ a{color:inherit}
         <div class="step-head dark"><span class="st">STEP 2</span><h3>증권사 앱에서 주식 보내기</h3><p>이용 중인 증권사를 선택하면 앱 메뉴 경로와 입고계좌를 알려드려요.</p></div>
         <div class="brokers" id="brokers" role="group" aria-label="증권사 선택"></div>
         <div class="bk-detail" id="bkDetail" aria-live="polite"></div>
+        <p class="bk-more">목록에 없는 증권사를 이용 중이시면 자산기금팀(02-2078-7221 · <a href="mailto:goods@worldvision.or.kr">goods@worldvision.or.kr</a>)에 문의해 주세요.</p>
       </div>
 
       <div class="choose" id="choose">
@@ -456,10 +464,12 @@ a{color:inherit}
 
 <footer class="foot">
   <div class="container">
-    <span>월드비전 임직원 주식기부 캠페인 · 주주클럽</span>
+    <span>월드비전 임직원 주식기부 캠페인 · 주주클럽 <em style="font-style:normal;opacity:.6;margin-left:8px">업데이트 2026.11.18</em></span>
     <a href="#top">맨 위로 ↑</a>
   </div>
 </footer>
+
+<a class="guide-fab" href="guide.html" aria-label="주식기부방법 자세히보기"><div>주식기부방법<br>자세히보기<span>→</span></div></a>
 
 <div class="dock">
   <div class="dock-inner">
@@ -487,10 +497,7 @@ const BROKERS = [
   {n:'KB증권',app:'M-able',path:['뱅킹/대출','대체출고','주식·채권출고','당사출고'],acct:'3660-28521-01'},
   {n:'미래에셋증권',app:'M-STOCK',path:['메뉴','관리','뱅킹','주식/채권대체','당사대체'],acct:'4820-4042-0040'},
   {n:'삼성증권',app:'mPOP',path:['이체/잔고/대출','대체출고','국내주식 자사대체'],acct:'7070-011396-01'},
-  {n:'한국투자증권',app:'한국투자',path:['자산/뱅킹','이체','유가증권출고'],acct:'8084-4439-01'},
-  {n:'신한투자증권',app:'신한 SOL증권',path:['메뉴','뱅킹','이체/출고','주식·채권이체','당사대체출고'],acct:'112-11-267940'},
-  {n:'하나증권',app:'원큐프로(1Q Pro)',path:['뱅킹','이체','주식·채권출고','당사대체출고'],acct:'3912-3560-10'},
-  {n:'유진투자증권',app:'스마트챔피언',path:['계좌간 유가증권대체'],acct:'300-00-350346'}
+  {n:'한국투자증권',app:'한국투자',path:['자산/뱅킹','이체','유가증권출고'],acct:'8084-4439-01'}
 ];
 const HOME_URL='https://www.worldvision.or.kr/supportGuide/stockSupportAgreement';
 const $=s=>document.querySelector(s);
@@ -535,10 +542,9 @@ function bento(){
 /* 증권사 선택 */
 let bkSel=null;
 function renderBroker(){
-  $('#brokers').innerHTML=BROKERS.map((b,i)=>`<button class="bk ${bkSel===i?'on':''}" data-bk="${i}" type="button">${b.n}</button>`).join('')+`<button class="bk ${bkSel==='other'?'on':''}" data-bk="other" type="button">그 밖의 증권사</button>`;
+  $('#brokers').innerHTML=BROKERS.map((b,i)=>`<button class="bk ${bkSel===i?'on':''}" data-bk="${i}" type="button">${b.n}</button>`).join('');
   const d=$('#bkDetail');
   if(bkSel===null){d.innerHTML='<p class="bk-empty">위에서 이용 중인 증권사를 선택해 주세요.</p>';return}
-  if(bkSel==='other'){d.innerHTML='<div class="bk-contact"><b>목록에 없는 증권사를 이용 중이신가요?</b>월드비전 자산기금팀 담당자에게 문의해 주세요.<br>02-2078-7221 · <a href="mailto:goods@worldvision.or.kr">goods@worldvision.or.kr</a><br><span style="color:var(--mute);font-size:13.5px">약정서의 증권사 선택에서는 ‘직접입력’을 고를 수 있어요.</span></div>';return}
   const b=BROKERS[bkSel];
   const steps=['앱('+b.app+') 실행',...b.path,'월드비전 입고계좌 입력 후 이체'];
   d.innerHTML=`<div class="bk-grid">
@@ -563,7 +569,7 @@ function renderSel(){
 }
 document.addEventListener('click',e=>{
   const btn=e.target.closest('button');
-  if(btn&&btn.dataset.bk!==undefined){bkSel=btn.dataset.bk==='other'?'other':+btn.dataset.bk;renderBroker();return}
+  if(btn&&btn.dataset.bk!==undefined){bkSel=+btn.dataset.bk;renderBroker();return}
   if(btn&&btn.dataset.copy){navigator.clipboard&&navigator.clipboard.writeText(btn.dataset.copy).then(()=>{btn.textContent='복사됨 ✓';setTimeout(()=>btn.textContent='복사',1500)}).catch(()=>{btn.textContent=btn.dataset.copy});return}
   const card=e.target.closest('.fund-card');
   if(card){
