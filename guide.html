@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>참여 방법 — 주주클럽 · 월드비전 주식기부 캠페인</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<style>
+:root{--or:#FF5F00;--or-d:#E05200;--terra:#C8643F;--dark:#24251F;--stage:#292B24;--cream:#F6F2EC;--ink:#24251F;--mute:#6D6B64;--line:#DDD7CC;--yellow:#FFF23A;--hh:69px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{font-family:Pretendard Variable,Pretendard,"Noto Sans KR",sans-serif;color:var(--ink);background:#fff;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden;word-break:keep-all;padding-bottom:78px}
+a{color:inherit}
+button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
+.container{max-width:1120px;margin:0 auto;padding:0 28px}
+.eyebrow{font-size:12.5px;font-weight:800;letter-spacing:.18em;color:var(--or);text-transform:uppercase}
+
+/* header */
+.header{position:sticky;top:0;z-index:60;background:#fff;height:var(--hh);border-bottom:1px solid var(--line)}
+.header-inner{max-width:1280px;margin:0 auto;height:100%;padding:0 28px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.logo{display:block;position:relative;width:190px;aspect-ratio:1400/237;flex:none}
+.logo img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}
+.logo .a{animation:swapA 6s ease-in-out infinite}
+.logo .b{animation:swapB 6s ease-in-out infinite}
+@keyframes swapA{0%,40%{opacity:1}50%,90%{opacity:0}100%{opacity:1}}
+@keyframes swapB{0%,40%{opacity:0}50%,90%{opacity:1}100%{opacity:0}}
+@media(prefers-reduced-motion:reduce){.logo .a,.logo .b{animation:none}.logo .b{opacity:0}}
+.desktop-nav{display:flex;gap:36px;font-size:15px;font-weight:700}
+.desktop-nav a{text-decoration:none;padding:6px 0;border-bottom:2px solid transparent}
+.desktop-nav a:hover,.desktop-nav a.cur{color:var(--or);border-color:var(--or)}
+.back{font-size:13px;font-weight:700;color:var(--mute);text-decoration:none}
+
+/* hero */
+.hero{background:var(--stage);color:#fff;padding:84px 0 70px;text-align:center}
+.hero .eyebrow{color:var(--yellow)}
+.hero h1{font-size:clamp(34px,6vw,64px);font-weight:900;letter-spacing:-.04em;line-height:1.2;margin:14px 0 14px}
+.hero h1 em{font-style:normal;color:var(--yellow)}
+.hero p{opacity:.85;font-size:clamp(15px,1.8vw,18px)}
+.jump{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:34px}
+.jump a{border:1.5px solid rgba(255,255,255,.4);border-radius:99px;padding:9px 20px;font-weight:700;font-size:14px;text-decoration:none;transition:.15s}
+.jump a:hover{background:#fff;color:var(--ink)}
+
+/* steps */
+.step{padding:96px 0;border-bottom:1px solid var(--line)}
+.step:nth-of-type(even){background:var(--cream)}
+.step .head{display:flex;gap:22px;align-items:flex-start;margin-bottom:34px}
+.step .no{font-size:clamp(46px,7vw,84px);font-weight:900;color:var(--or);letter-spacing:-.05em;line-height:.9;flex:none}
+.step h2{font-size:clamp(26px,4vw,40px);font-weight:900;letter-spacing:-.04em;line-height:1.25}
+.step .lead{color:var(--mute);margin-top:8px;font-size:clamp(15px,1.8vw,17px)}
+.btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:15px 26px;font-weight:800;font-size:16px;text-decoration:none;border-radius:2px;background:var(--or);color:#fff;transition:.15s}
+.btn:hover{background:var(--or-d)}
+.btn.line{background:#fff;color:var(--ink);border:1.5px solid var(--ink)}
+.btn.line:hover{background:var(--ink);color:#fff}
+.tips{list-style:none;max-width:760px}
+.tips li{position:relative;padding:12px 0 12px 30px;border-bottom:1px solid var(--line);font-weight:600}
+.tips li::before{content:"✓";position:absolute;left:2px;top:12px;color:var(--or);font-weight:900}
+.tips li small{display:block;font-weight:500;color:var(--mute);font-size:13.5px}
+
+/* captures */
+.shots{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;align-items:start}
+.shot .tag{display:inline-block;background:var(--or);color:#fff;font-weight:800;font-size:12.5px;letter-spacing:.08em;padding:4px 14px;border-radius:99px}
+.shot h3{font-size:20px;font-weight:900;letter-spacing:-.03em;margin:10px 0 12px}
+.frame{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff;box-shadow:0 10px 30px rgba(36,37,31,.1)}
+.frame img{display:block;width:100%;height:auto}
+.shot ul{list-style:none;margin-top:16px;font-size:14.5px}
+.shot li{padding:7px 0 7px 20px;position:relative;border-top:1px solid var(--line)}
+.shot li::before{content:"";position:absolute;left:2px;top:15px;width:7px;height:7px;border-radius:50%;background:var(--or)}
+.shot li b{font-weight:800}
+.note{margin-top:34px;background:#fff;border-left:4px solid var(--or);padding:18px 22px;font-size:14.5px;max-width:900px}
+.note b{font-weight:800}
+.sub{font-size:12.5px;color:var(--mute);margin-top:18px}
+
+/* final */
+.final{background:var(--stage);color:#fff;text-align:center;padding:100px 0}
+.final h2{font-size:clamp(28px,5vw,52px);font-weight:900;letter-spacing:-.04em;line-height:1.25;margin:12px 0 10px}
+.final .eyebrow{color:var(--yellow)}
+.final p{opacity:.8}
+.final .btns{justify-content:center}
+.final .btn.line{background:transparent;color:#fff;border-color:rgba(255,255,255,.6)}
+.final .btn.line:hover{background:#fff;color:var(--ink)}
+.reach{margin-top:26px;font-size:15px;opacity:.9}
+.reach a{text-decoration:none;border-bottom:1px solid rgba(255,255,255,.4)}
+.foot{background:#17180F;color:rgba(255,255,255,.6);padding:26px 0 30px;font-size:12.5px}
+.foot .container{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.foot a{text-decoration:none;color:#fff;font-weight:700}
+
+/* dock */
+.dock{position:fixed;left:0;right:0;bottom:0;z-index:70;background:var(--dark);color:#fff;border-top:1px solid rgba(255,255,255,.12)}
+.dock-inner{max-width:1280px;margin:0 auto;padding:12px 28px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.dock b{display:block;font-size:14.5px}
+.dock small{display:block;font-size:12px;opacity:.65}
+.dock a.btn2{background:var(--or);color:#fff;font-weight:800;padding:14px 26px;text-decoration:none;white-space:nowrap}
+.dock a.btn2:hover{background:var(--or-d)}
+
+@media(max-width:1000px){
+  .desktop-nav{display:none}
+  .shots{grid-template-columns:1fr;gap:46px;max-width:460px;margin:0 auto}
+}
+@media(max-width:720px){
+  .container,.header-inner{padding:0 20px}
+  .logo{width:160px}
+  .step{padding:70px 0}
+  .step .head{flex-direction:column;gap:6px}
+  .hero{padding:60px 0 54px}
+  .dock-inner{padding:10px 16px}
+  .dock small{display:none}
+  .dock a.btn2{padding:12px 18px;font-size:14px}
+  body{padding-bottom:70px}
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-inner">
+    <a class="logo" href="index.html" aria-label="World Vision · 후원을 멈추는 후원">
+      <img class="b" src="assets/logo_wv.png" alt="World Vision">
+      <img class="a" src="assets/logo_slogan.png" alt="후원을 멈추는 후원">
+    </a>
+    <nav class="desktop-nav" aria-label="주요 메뉴">
+      <a href="index.html#about">캠페인 소개</a><a href="guide.html" class="cur">참여 방법</a><a href="index.html#funds">기금 안내</a><a href="index.html#status">기부 현황</a><a href="index.html#faq">FAQ</a>
+    </nav>
+    <a class="back" href="index.html">← 주주클럽 메인</a>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="container">
+      <p class="eyebrow">HOW TO JOIN</p>
+      <h1>참여 방법,<br><em>4단계</em>로 알려드려요</h1>
+      <p>주식 이체부터 온라인 약정서 제출까지, 실제 화면과 함께 확인하세요.</p>
+      <div class="jump">
+        <a href="#s1">01 기금 고르기</a><a href="#s2">02 주식 보내기</a><a href="#s3">03 약정서 쓰기</a><a href="#s4">04 확인·안내</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="step" id="s1">
+    <div class="container">
+      <div class="head"><span class="no">01</span><div><h2>기금 고르기</h2><p class="lead">주주클럽 페이지에서 응원할 기금을 골라요.</p></div></div>
+      <ul class="tips">
+        <li>국내 꿈성장기금 · 해외 자립마을 기금 · 긴급구호 기금 중 하나를 선택합니다.<small>약정서 3단계의 ‘약정기금 사업’ 선택과 같은 이름이에요. 미리 정해 두면 편해요.</small></li>
+      </ul>
+      <div class="btns"><a class="btn" href="index.html#funds">기금 고르러 가기 →</a></div>
+    </div>
+  </section>
+
+  <section class="step" id="s2">
+    <div class="container">
+      <div class="head"><span class="no">02</span><div><h2>증권사 앱에서 주식 보내기</h2><p class="lead">이용 중인 증권사 앱에서 월드비전 계좌로 주식을 이체해요.</p></div></div>
+      <ul class="tips">
+        <li>주주클럽 페이지에서 증권사를 선택하면 <b>앱 메뉴 경로와 입고계좌</b>를 알려드려요.</li>
+        <li>거래구분은 <b>‘기타(비양도)’</b>로 선택합니다.</li>
+        <li>이체가 끝나면 <b>완료 화면을 캡처</b>해 두세요.<small>약정서 2단계에서 ‘주식이체확인증’으로 올려야 합니다.</small></li>
+        <li>국내 상장주식(코스피·코스닥)만 기부할 수 있어요.</li>
+        <li>목록에 없는 증권사는 자산기금팀(02-2078-7221)에 문의해 주세요.</li>
+      </ul>
+      <div class="btns"><a class="btn" href="index.html#broker">증권사별 이체 방법 보기 →</a></div>
+    </div>
+  </section>
+
+  <section class="step" id="s3">
+    <div class="container">
+      <div class="head"><span class="no">03</span><div><h2>온라인 약정서 쓰기</h2><p class="lead">월드비전 홈페이지의 주식기부 약정서를 3단계로 작성해요.</p></div></div>
+      <div class="shots">
+        <div class="shot">
+          <span class="tag">STEP 1</span><h3>기부자 정보 입력</h3>
+          <div class="frame"><img src="assets/guide/step1.jpg" alt="약정서 1단계 기부자 정보 입력 화면" loading="lazy"></div>
+          <ul>
+            <li><b>이름 · 휴대폰번호 · 이메일 · 주소</b>를 입력해요.</li>
+            <li>기부금 영수증은 <b>등록 / 등록안함</b> 중 선택해요.</li>
+            <li>영수증을 등록하면 <b>주민등록번호</b>를 입력하고 인증해요.</li>
+          </ul>
+        </div>
+        <div class="shot">
+          <span class="tag">STEP 2</span><h3>기부 주식 내역</h3>
+          <div class="frame"><img src="assets/guide/step2.jpg" alt="약정서 2단계 기부 주식 내역 화면" loading="lazy"></div>
+          <ul>
+            <li><b>이체일 · 증권사 · 주식 종목 · 기부주식수 · 취득가(장부가)</b>를 입력해요.</li>
+            <li>앞에서 캡처한 <b>이체확인증을 업로드</b>해요.</li>
+            <li>여러 종목이면 <b>‘기부주식 추가’</b>를 눌러요.</li>
+          </ul>
+        </div>
+        <div class="shot">
+          <span class="tag">STEP 3</span><h3>기금 운영</h3>
+          <div class="frame"><img src="assets/guide/step3.jpg" alt="약정서 3단계 기금 운영 화면" loading="lazy"></div>
+          <ul>
+            <li><b>약정기금 사업</b>을 선택해요.</li>
+            <li><b>개인정보 수집 및 동의</b>(필수)에 체크해요.</li>
+            <li><b>저장하기</b>를 누르면 약정서 제출이 끝나요.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="note">
+        <p><b>기부가액</b>은 이체일의 한국거래소(KRX) 종가 기준이며, 종가보다 취득가가 낮을 때는 취득가로 기부 처리됩니다.</p>
+        <p style="margin-top:8px"><b>기부금영수증</b>: 2025년부터 전자기부금영수증 의무발급이 시행되어, 월드비전에서 발급되는 기부금영수증은 세액공제용으로 사용할 수 없습니다. 국세청 홈택스의 전자기부금영수증을 이용해 주세요.</p>
+        <p style="margin-top:8px"><b>5종목 이상</b>을 기부하실 때는 자산기금팀(goods@worldvision.or.kr)으로 연락해 주세요.</p>
+      </div>
+      <p class="sub">※ 위 화면은 월드비전 홈페이지 주식기부 약정서(2026.11 기준, 입력 전 화면)이며, 홈페이지 수정에 따라 달라질 수 있습니다.</p>
+      <div class="btns"><a class="btn" href="https://www.worldvision.or.kr/supportGuide/stockSupportAgreement" target="_blank" rel="noopener noreferrer">월드비전 홈페이지에서 약정서 쓰기 ↗</a></div>
+    </div>
+  </section>
+
+  <section class="step" id="s4">
+    <div class="container">
+      <div class="head"><span class="no">04</span><div><h2>확인 및 결과 안내</h2><p class="lead">자산기금팀이 입고를 확인하고, 이후 사업 결과를 안내해 드려요.</p></div></div>
+      <ul class="tips">
+        <li>이체와 약정서 내용을 확인한 뒤 연락드려요.</li>
+        <li>기부 현황은 주주클럽 페이지의 ‘지금까지 모인 마음’에서 확인할 수 있어요.</li>
+      </ul>
+      <div class="btns"><a class="btn line" href="index.html#status">기부 현황 보기 →</a></div>
+    </div>
+  </section>
+
+  <section class="final">
+    <div class="container">
+      <p class="eyebrow">YOUR SHARE. THEIR TOMORROW.</p>
+      <h2>나의 한 주가<br>아이의 내일이 된다.</h2>
+      <p>궁금한 점은 자산기금팀이 안내해 드립니다.</p>
+      <div class="btns"><a class="btn" href="index.html#funds">꿈주주 되기 →</a><a class="btn line" href="mailto:goods@worldvision.or.kr">이메일 문의</a></div>
+      <p class="reach">월드비전 자산기금팀 · 02-2078-7221 · <a href="mailto:goods@worldvision.or.kr">goods@worldvision.or.kr</a></p>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="container">
+    <span>월드비전 임직원 주식기부 캠페인 · 주주클럽</span>
+    <a href="#top" onclick="window.scrollTo({top:0});return false">맨 위로 ↑</a>
+  </div>
+</footer>
+
+<div class="dock">
+  <div class="dock-inner">
+    <div><b>아이의 꿈에 투자하는 한 주</b><small>월드비전 주주클럽 · 주식을 주세요</small></div>
+    <a class="btn2" href="index.html#funds">꿈주주 되기 ↗</a>
+  </div>
+</div>
+</body>
+</html>

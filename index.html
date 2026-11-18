@@ -184,6 +184,33 @@ a{color:inherit}
 .choice .go:hover{background:var(--or-d)}
 .choice .fine{font-size:12px;color:var(--mute);margin-top:12px}
 
+.choose + .choose{margin-top:18px}
+.more-guide{margin-top:34px}
+.more-guide a{display:inline-flex;align-items:center;gap:8px;font-weight:800;color:var(--or);text-decoration:none;border-bottom:2px solid var(--or);padding-bottom:2px}
+.brokers{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.bk{padding:11px 18px;border:1.5px solid var(--line);border-radius:99px;font-weight:700;font-size:15px;background:#fff;transition:.15s}
+.bk:hover{border-color:var(--ink)}
+.bk.on{background:var(--or);border-color:var(--or);color:#fff}
+.bk-detail{background:#FBF7F2;border-radius:6px;padding:26px}
+.bk-empty{color:var(--mute);font-size:15px}
+.bk-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:30px;align-items:start}
+.bk-app{font-size:13px;font-weight:800;letter-spacing:.06em;color:var(--or)}
+.bk-app b{display:block;font-size:22px;color:var(--ink);letter-spacing:-.02em;margin-top:2px}
+.bk-path{list-style:none;counter-reset:p;margin-top:16px}
+.bk-path li{counter-increment:p;display:flex;gap:12px;align-items:flex-start;padding:9px 0;border-bottom:1px solid var(--line);font-weight:700;font-size:15.5px}
+.bk-path li::before{content:counter(p);flex:none;width:24px;height:24px;border-radius:50%;background:var(--dark);color:#fff;display:grid;place-items:center;font-size:12px;font-weight:800;margin-top:1px}
+.bk-path li:last-child::before{background:var(--or)}
+.bk-path li:last-child{border-bottom:0}
+.bk-acct{background:#fff;border:1px solid var(--line);border-radius:6px;padding:22px}
+.bk-acct dt{font-size:12px;color:var(--mute);margin-top:12px}
+.bk-acct dt:first-child{margin-top:0}
+.bk-acct dd{font-weight:800;font-size:17px}
+.bk-acct .no{font-size:26px;font-weight:900;color:var(--or-d);display:flex;gap:10px;align-items:center;flex-wrap:wrap;letter-spacing:.01em}
+.bk-copy{font-size:12px;font-weight:700;background:var(--dark);color:#fff;border-radius:99px;padding:5px 14px}
+.bk-tip{margin-top:16px;background:var(--or-t,#FFF1E8);border-radius:6px;padding:12px 14px;font-size:13.5px;font-weight:600}
+.bk-contact{font-size:15px}
+.bk-contact b{display:block;font-size:17px;margin-bottom:6px}
+
 /* faq */
 .faq-list{border-top:2px solid var(--ink)}
 .faq-list details{border-bottom:1px solid var(--line)}
@@ -225,6 +252,8 @@ a{color:inherit}
   .bento{grid-template-columns:repeat(2,1fr)}
   .b-or{grid-column:span 2;grid-row:auto}
   .choose{padding:26px}
+  .bk-grid{grid-template-columns:1fr;gap:20px}
+  .bk-detail{padding:20px}
   .choice-grid{grid-template-columns:1fr;gap:22px}
   .choice-grid>div+div{border-left:0;padding-left:0;border-top:1px solid var(--line);padding-top:22px}
 }
@@ -322,10 +351,11 @@ a{color:inherit}
       <h2>참여는 이렇게 진행돼요</h2>
       <div class="steps4">
         <div><div class="n">01</div><h3>기금 고르기</h3><p>이 페이지에서 응원할<br>기금을 골라요.</p></div>
-        <div><div class="n">02</div><h3>증권사 앱에서 주식 보내기</h3><p>월드비전 홈페이지의 안내대로<br>이용 중인 증권사 앱에서 이체해요.</p></div>
+        <div><div class="n">02</div><h3>증권사 앱에서 주식 보내기</h3><p>증권사를 고르면 앱 메뉴 경로와<br>입고계좌를 알려드려요.</p></div>
         <div><div class="n">03</div><h3>온라인 약정서 쓰기</h3><p>월드비전 홈페이지에서<br>약정서를 작성하고 제출해요.</p></div>
         <div><div class="n">04</div><h3>확인 및 결과 안내</h3><p>입고를 확인하고,<br>이후 사업 결과를 안내해 드려요.</p></div>
       </div>
+      <p class="more-guide"><a href="guide.html">약정서 작성 화면까지 단계별로 보기 →</a></p>
     </div>
   </section>
 
@@ -363,9 +393,15 @@ a{color:inherit}
       </div>
       <p class="swipe-hint">좌우로 밀어 세 가지 기금을 확인하세요 →</p>
 
+      <div class="choose broker" id="broker">
+        <div class="step-head dark"><span class="st">STEP 2</span><h3>증권사 앱에서 주식 보내기</h3><p>이용 중인 증권사를 선택하면 앱 메뉴 경로와 입고계좌를 알려드려요.</p></div>
+        <div class="brokers" id="brokers" role="group" aria-label="증권사 선택"></div>
+        <div class="bk-detail" id="bkDetail" aria-live="polite"></div>
+      </div>
+
       <div class="choose" id="choose">
         <aside class="choice" aria-live="polite">
-          <div class="step-head dark"><span class="st">STEP 2</span><h3>온라인 약정서 쓰러 가기</h3></div>
+          <div class="step-head dark"><span class="st">STEP 3</span><h3>온라인 약정서 쓰러 가기</h3></div>
           <div class="choice-grid">
             <div>
               <dl>
@@ -375,8 +411,8 @@ a{color:inherit}
               <p class="hint" id="chHint">기금을 선택하면 눌러볼 수 있어요.</p>
             </div>
             <div>
-              <ol class="next-steps"><li>증권사 앱에서 주식을 월드비전 계좌로 이체하고, <b>이체 완료 화면을 캡처</b>해 두세요.</li><li>약정서 1단계: 기부자 정보를 입력합니다.</li><li>2단계: 이체일, 증권사, 종목, 수량, 취득가를 적고 캡처한 이체확인증을 올립니다.</li><li>3단계: <b>사업을 선택</b>하고 개인정보 동의 후 저장합니다.</li></ol>
-              <p class="fine">이 페이지의 선택은 신청이 아닙니다. 홈페이지의 온라인 약정서까지 제출해야 참여가 완료됩니다.</p>
+              <ol class="next-steps"><li>STEP 2에서 주식 이체를 마치고, <b>이체 완료 화면을 캡처</b>해 두세요.</li><li>약정서 1단계: 기부자 정보를 입력합니다.</li><li>2단계: 이체일, 증권사, 종목, 수량, 취득가를 적고 캡처한 이체확인증을 올립니다.</li><li>3단계: <b>사업을 선택</b>하고 개인정보 동의 후 저장합니다.</li></ol>
+              <p class="fine">이 페이지의 선택은 신청이 아닙니다. 홈페이지의 온라인 약정서까지 제출해야 참여가 완료됩니다. <a href="guide.html">약정서 작성 방법을 화면으로 보기 →</a></p>
             </div>
           </div>
         </aside>
@@ -446,7 +482,17 @@ const BIZ = [
   {id:'global',name:'해외 자립마을 기금',sub:'SELF-RELIANT VILLAGE'},
   {id:'relief',name:'긴급구호 기금',sub:'EMERGENCY RELIEF'}
 ];
-const HOME_URL='https://www.worldvision.or.kr/supportGuide/stockSupport#:~:text=%EC%82%AC%EC%9A%A9%20%EC%A4%91%EC%9D%B8%20%EC%A6%9D%EA%B6%8C%EC%82%AC%EB%A5%BC%20%EC%84%A0%ED%83%9D%ED%95%98%EC%84%B8%EC%9A%94';
+const BROKERS = [
+  {n:'NH투자증권',app:'나무(NAMUH)',path:['자산/뱅킹','이체','주식·채권이체'],acct:'201-01-613739'},
+  {n:'KB증권',app:'M-able',path:['뱅킹/대출','대체출고','주식·채권출고','당사출고'],acct:'3660-28521-01'},
+  {n:'미래에셋증권',app:'M-STOCK',path:['메뉴','관리','뱅킹','주식/채권대체','당사대체'],acct:'4820-4042-0040'},
+  {n:'삼성증권',app:'mPOP',path:['이체/잔고/대출','대체출고','국내주식 자사대체'],acct:'7070-011396-01'},
+  {n:'한국투자증권',app:'한국투자',path:['자산/뱅킹','이체','유가증권출고'],acct:'8084-4439-01'},
+  {n:'신한투자증권',app:'신한 SOL증권',path:['메뉴','뱅킹','이체/출고','주식·채권이체','당사대체출고'],acct:'112-11-267940'},
+  {n:'하나증권',app:'원큐프로(1Q Pro)',path:['뱅킹','이체','주식·채권출고','당사대체출고'],acct:'3912-3560-10'},
+  {n:'유진투자증권',app:'스마트챔피언',path:['계좌간 유가증권대체'],acct:'300-00-350346'}
+];
+const HOME_URL='https://www.worldvision.or.kr/supportGuide/stockSupportAgreement';
 const $=s=>document.querySelector(s);
 const won=n=>n>=1e8?(n/1e8).toFixed(2).replace(/\.?0+$/,'')+'억':Math.round(n/1e4).toLocaleString()+'만';
 const st={biz:null};
@@ -485,6 +531,22 @@ function bento(){
   requestAnimationFrame(()=>setTimeout(()=>document.querySelectorAll('[data-w]').forEach(e=>e.style.width=e.dataset.w+'%'),60));
 }
 
+
+/* 증권사 선택 */
+let bkSel=null;
+function renderBroker(){
+  $('#brokers').innerHTML=BROKERS.map((b,i)=>`<button class="bk ${bkSel===i?'on':''}" data-bk="${i}" type="button">${b.n}</button>`).join('')+`<button class="bk ${bkSel==='other'?'on':''}" data-bk="other" type="button">그 밖의 증권사</button>`;
+  const d=$('#bkDetail');
+  if(bkSel===null){d.innerHTML='<p class="bk-empty">위에서 이용 중인 증권사를 선택해 주세요.</p>';return}
+  if(bkSel==='other'){d.innerHTML='<div class="bk-contact"><b>목록에 없는 증권사를 이용 중이신가요?</b>월드비전 자산기금팀 담당자에게 문의해 주세요.<br>02-2078-7221 · <a href="mailto:goods@worldvision.or.kr">goods@worldvision.or.kr</a><br><span style="color:var(--mute);font-size:13.5px">약정서의 증권사 선택에서는 ‘직접입력’을 고를 수 있어요.</span></div>';return}
+  const b=BROKERS[bkSel];
+  const steps=['앱('+b.app+') 실행',...b.path,'월드비전 입고계좌 입력 후 이체'];
+  d.innerHTML=`<div class="bk-grid">
+    <div><p class="bk-app">${b.n}<b>${b.app} 앱</b></p><ol class="bk-path">${steps.map(x=>`<li>${x}</li>`).join('')}</ol></div>
+    <div><dl class="bk-acct"><dt>입고 증권사</dt><dd>${b.n}</dd><dt>입고계좌</dt><dd class="no">${b.acct}<button class="bk-copy" type="button" data-copy="${b.acct}">복사</button></dd><dt>거래구분</dt><dd>기타(비양도)</dd></dl>
+    <p class="bk-tip">이체가 끝나면 <b>완료 화면을 캡처</b>해 두세요. 약정서 2단계에서 ‘주식이체확인증’으로 올립니다.</p></div></div>`;
+}
+
 /* 참여 선택 (기금 카드) */
 function renderSel(){
   document.querySelectorAll('.fund-card').forEach(c=>{
@@ -501,6 +563,8 @@ function renderSel(){
 }
 document.addEventListener('click',e=>{
   const btn=e.target.closest('button');
+  if(btn&&btn.dataset.bk!==undefined){bkSel=btn.dataset.bk==='other'?'other':+btn.dataset.bk;renderBroker();return}
+  if(btn&&btn.dataset.copy){navigator.clipboard&&navigator.clipboard.writeText(btn.dataset.copy).then(()=>{btn.textContent='복사됨 ✓';setTimeout(()=>btn.textContent='복사',1500)}).catch(()=>{btn.textContent=btn.dataset.copy});return}
   const card=e.target.closest('.fund-card');
   if(card){
     st.biz=card.dataset.biz;renderSel();
@@ -532,7 +596,7 @@ function posterUI(){
 addEventListener('scroll',posterUI,{passive:true});
 addEventListener('resize',()=>{setDockH();posterUI()});
 setDockH();posterUI();
-bento();renderSel();loadSummary();
+bento();renderSel();renderBroker();loadSummary();
 </script>
 </body>
 </html>
